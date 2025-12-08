@@ -265,10 +265,10 @@
   .mixed_content ul {
     @apply list-disc pl-21 mb-16
   }
-}
-
-@supports (-webkit-touch-callout: none) {
-  .parallax {
-    background-attachment: scroll !important;
+  
+  @supports (-webkit-touch-callout: none) {
+    .parallax {
+      @apply bg-scroll
+    }
   }
 }

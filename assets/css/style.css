@@ -625,6 +625,15 @@
     --tw-gradient-from: var(--color-orange-50);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
+  .bg-cover {
+    background-size: cover;
+  }
+  .bg-fixed {
+    background-attachment: fixed;
+  }
+  .bg-right {
+    background-position: right;
+  }
   .object-cover {
     object-fit: cover;
   }
@@ -1623,10 +1632,10 @@
     list-style-type: disc;
     padding-left: calc(var(--spacing) * 21);
   }
-}
-@supports (-webkit-touch-callout: none) {
-  .parallax {
-    background-attachment: scroll !important;
+  @supports (-webkit-touch-callout: none) {
+    .parallax {
+      background-attachment: scroll;
+    }
   }
 }
 @property --tw-translate-x {
