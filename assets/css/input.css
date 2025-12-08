@@ -1,0 +1,264 @@
+@import "tailwindcss";
+
+@theme {
+  --spacing: 1px;
+  --spacing-spc: clamp(3.125rem, -0.4464rem + 5.5804vw, 6.25rem);
+
+  --breakpoint-*: initial;
+
+  --breakpoint-xsm: 450px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1352px;
+  --breakpoint-3xl: 1400px;
+
+  --font-kanit: 'Kanit', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+
+  --color-brown: #3E363E;
+  --color-red: #A5170E;
+  --color-gray: #E3DCD5;
+
+  --text-h1: clamp(1.875rem, 1.75rem + 0.625vw, 2.5rem); /* 30 - 40 */
+  --text-h1--line-height: clamp(1.875rem, 1.75rem + 0.625vw, 2.5rem); /* 30 - 40 */
+
+  --text-h2: clamp(1.25rem, 1.125rem + 0.625vw, 1.875rem); /* 20-30 px */
+  --text-h2--line-height: clamp(1.25rem, 1.125rem + 0.625vw, 1.875rem); /* 20-30 px */
+
+  --text-h3: 20px;
+  --text-h3--line-height: 25px;
+
+  --text-h4: 18px;
+
+  --text-h5: 15px;
+
+  --shadow-1: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+:root {
+  --focus-outline-color: currentColor;
+  --focus-outline-offset: 0.1rem;
+  --focus-outline-style: solid;
+  --focus-outline-width: 2px;
+}
+
+*:focus-visible {
+  outline-color: var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+  outline-style: var(--focus-outline-style);
+  outline-width: var(--focus-outline-width);
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../fonts/kanit-v17-latin-100.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../fonts/kanit-v17-latin-200.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/kanit-v17-latin-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/kanit-v17-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/kanit-v17-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/kanit-v17-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/kanit-v17-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/kanit-v17-latin-800.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/kanit-v17-latin-900.woff2') format('woff2');
+}
+
+@layer {
+
+  html{
+    @apply scroll-smooth
+  }
+
+  * {
+    @apply transition-all duration-300;
+    word-break: break-word;
+  }
+
+  body {
+    @apply font-kanit text-brown bg-white text-h4
+  }
+
+  button {
+    @apply cursor-pointer
+  }
+
+  .container {
+    @apply mx-auto px-16
+  }
+
+  a, span {
+    @apply inline-block
+  }
+
+  .scrollbar_none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .link {
+    @apply flex gap-5 items-center
+  }
+
+  .link.active {
+    @apply font-medium
+  }
+
+  .link.active::before {
+    @apply content-['■'] text-sm align-middle text-red
+  }
+
+  .text {
+    @apply space-y-8 xl:space-y-16
+  }
+
+  .swiper-pagination-bullet {
+    @apply !size-20 !bg-[#9A8B7C] !opacity-65 !rounded-none !mx-13
+  }
+
+  .swiper-pagination-bullet-active {
+    @apply !opacity-100 !bg-red
+  }
+
+  .animated_line {
+    @apply relative
+  }
+
+  .animated_line::after {
+    @apply absolute inset-0 border-b content-[''] transition-all duration-300
+  }
+
+  .animated_line:hover::after {
+    @apply right-full
+  }
+
+  .testimonial_swiper .swiper-pagination {
+    @apply !static !flex justify-center
+  }
+
+  .swiper-slide {
+    @apply !h-auto
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-8
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brown
+  }
+  
+  .clip1 {
+    clip-path: polygon(0% 0%, 80% 0%, 100% 50%, 80% 100%, 0% 100%);
+  }
+
+  .list1 li::before{
+    @apply content-[''] size-22 bg-[url('../images/right.svg')] bg-no-repeat bg-center inline-block mr-2 align-middle
+  }
+
+  input{
+    @apply accent-red
+  }
+
+  .mixed_content{
+    @apply font-light
+  }
+
+  .mixed_content p{
+    @apply mb-8 xl:mb-16
+  }
+
+  .mixed_content h1{
+    @apply text-h1 font-medium mb-30
+  }
+
+  .mixed_content h2{
+    @apply text-[26px] pt-10
+  }
+
+  .mixed_content h3{
+    @apply text-[24px] pt-10
+  }
+
+  .mixed_content h4{
+    @apply text-[22px] pt-10
+  }
+
+  .mixed_content h5{
+    @apply text-[20px] pt-10
+  }
+
+  .mixed_content h6{
+    @apply text-[18px] pt-10
+  }
+
+  .mixed_content a{
+    @apply underline
+  }
+
+  .mixed_content ul{
+    @apply list-disc pl-21 mb-16
+  }
+}

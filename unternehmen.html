@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Koch Baupartner - Ihr zuverlässiger Partner für hochwertige Bauprojekte im Kreis Olpe und Oberbergischen Kreis. Entdecken Sie unsere Leistungen und Referenzen.">
+    <title>Unternehmen | Koch Baupartner</title>
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/alpine.js"></script>
+</head>
+
+<body x-data="{ isMenuOpen: false }" :class="isMenuOpen ? 'overflow-hidden mr-8' : ''">
+    <header class="py-25 min-h-90 xsm:min-h-120 flex items-center z-[99999] bg-white sticky top-0 shadow"
+        @keydown.window.escape="isMenuOpen = false">
+        <div class="container">
+            <div class="flex justify-between items-center gap-100">
+                <a href="index.html" class="w-160 xsm:w-250">
+                    <img src="assets/images/logo.svg" alt="Koch Baupartner Logo">
+                </a>
+                <button class="text-red shrink-0 border p-10 border-white hover:border-red tran_all"
+                    @click="isMenuOpen = !isMenuOpen" aria-label="Menüumschalter" title="Menüumschalter">
+                    <svg x-show="isMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                    <svg x-show="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-menu">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 8l16 0" />
+                        <path d="M4 16l16 0" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div x-show="isMenuOpen" x-transition:enter="transition-opacity ease-in-out duration-300"
+            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition-opacity ease-in-out duration-300" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0" class="fixed left-0 top-90 xsm:top-120 size-full shadow-lg z-[9999] py-6"
+            @click.outside="isMenuOpen = false" style="display: none;">
+            <div
+                class="overflow-y-auto scrollbar_none max-h-[calc(100dvh-90px)] xsm:max-h-[calc(100dvh-120px)] container font-light py-40 xl:py-115 text-h2 text-[#2E2E2E]">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:flex gap-20 xl:gap-60 flex-wrap">
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a href="index.html" @click="isMenuOpen = !isMenuOpen">
+                                Startseite
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html">
+                                Unternehmen
+                            </a>
+                        </div>
+                        <ul class="space-y-10">
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#unternehmensgeschichte"
+                                    class="link active">
+                                    Unternehmensgeschichte
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="#" class="link">
+                                    Team / Qualifikationen
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#werte" class="link">
+                                    Werte
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#partner" class="link">
+                                    Partner
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html">
+                                Leistungen
+                            </a>
+                        </div>
+                        <ul class="space-y-10">
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#was-wir-bauen" class="link">
+                                    Was wir bauen
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#wie-wir-bauen" class="link">
+                                    Wie wir bauen
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#weitere-leistungen"
+                                    class="link">
+                                    Weitere Leistungen
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="referenzen.html">
+                                Referenzen
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html">
+                                Kontakt
+                            </a>
+                        </div>
+                        <ul class="space-y-10">
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html#kontaktformular" class="link">
+                                    Kontaktformular
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html#ansprechpartner" class="link">
+                                    Ansprechpartner
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="#">
+                                Aktuelles
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-0 -z-50">
+                <img src="assets/images/menu-bg.png" alt="" class="size-full object-cover object-center">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="relative z-10">
+            <div class="min-h-[calc(100dvh-90px)] xsm:min-h-[calc(100dvh-120px)] flex items-end">
+                <div class="p-10 pb-50 sm:p-30 sm:pb-60 xl:py-150 xl:pl-0 w-full">
+                    <div class="bg-red/90 xl:w-[51%] text-white p-20 xsm:p-30 xl:pl-[calc((100%-1336px)/2)]">
+                        <div class="xl:pl-16">
+                            <h1 class="text-h1 uppercase font-medium mb-10">
+                                Wir bauen auf Vertrauen
+                            </h1>
+                            <div class="text mb-8 xl:mb-15 text-h3">
+                                <p>
+                                    Immobilien sind Lebensräume, in denen Menschen ihre Geschichten schreiben. <br>
+                                    Wir schaffen die Basis dafür - mit Erfahrung, Leidenschaft und dem
+                                </p>
+                            </div>
+                            <a href="kontakt.html#kontaktformular" class="animated_line uppercase text-h3 font-medium">
+                                Jetzt anfragen >>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 -z-10">
+                        <img src="assets/images/Unternehmen-hero-bg.webp" alt="Unternehmen hero bg"
+                            class="size-full object-cover object-center" fetchpriority="high" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-spc">
+            <div class="container">
+                <div>
+                    <h2 class="title w-fit text-h3 font-medium text-red border-b uppercase mb-8 xl:mb-17">
+                        Unternehmen
+                    </h2>
+                    <h3 class="text-h1 uppercase font-medium mb-14 xl:mb-28">
+                        Bauen mit Qualität, Beständigkeit und Verantwortung
+                    </h3>
+                    <div class="text font-light mb-14 xl:mb-36 max-w-1225">
+                        <p>
+                            Unser Bauunternehmen Koch Baupartner GmbH steht seit Jahren für höchste Qualität,
+                            zuverlässige Ausführung und nachhaltige Bauprojekte. Wir verbinden handwerkliches Können mit
+                            modernster Technik, um Gebäude zu schaffen, die nicht nur ästhetisch überzeugen, sondern
+                            auch funktional und langlebig sind. <br>
+                            Für uns bedeutet Bauen mehr als nur Mauern und Dächer: Wir übernehmen Verantwortung - für
+                            unsere Kunden, für die Umwelt und für die Gemeinschaft, in der wir tätig sind. Jedes Projekt
+                            wird mit Sorgfalt geplant, termingerecht umgesetzt und nach höchsten Standards geprüft.
+                            Unsere Referenzen spiegeln unsere Philosophie wider: Ob Wohn- oder Gewerbebauten,
+                            Sanierungen oder komplexe Neubauprojekte - wir liefern Ergebnisse, auf die Sie sich
+                            verlassen können. Qualität, Beständigkeit und Verantwortung sind dabei keine leeren Worte,
+                            sondern gelebte Praxis.
+
+                            Vertrauen Sie auf ein Bauunternehmen, das Ihre Visionen in sichere, solide und nachhaltige
+                            Realität verwandelt.
+                        </p>
+                    </div>
+                    <a href="kontakt.html" class="bg-red text-white py-8 px-16 font-medium text-h3 hover:bg-brown">
+                        Kontakt aufnehmen >
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="parallax aspect-video lg:aspect-[3.84/1]"
+                style="background-image: url(assets/images/Modernes-Wohnhaus.webp); background-attachment: fixed; background-size: cover; background-position: center;">
+            </div>
+        </section>
+        <section class="py-spc" id="unternehmensgeschichte">
+            <div class="container">
+                <div class="bg-gray p-20 sm:p-65">
+                    <h2 class="title w-fit text-h3 font-medium text-red border-b uppercase mb-8 xl:mb-17">
+                        Geschichte
+                    </h2>
+                    <h3 class="text-h1 uppercase font-medium mb-14 xl:mb-28 max-w-850">
+                        Koch Baupartner - Über 30 Jahre Erfahrung im Wohn- und Gewerbebau
+                    </h3>
+                    <div class="grid xl:grid-cols-2 gap-50">
+                        <div class="font-light" x-data="{open: false}">
+                            <div class="text">
+                                <p>
+                                    Über 30 Jahre lang wurde unser Bauunternehmen von dem heutigen Team unseres Partners
+                                    Koch Immobilien geführt. In dieser Zeit sind zahlreiche Wohn- und Gewerbeobjekte
+                                    entstanden, die für Qualität, Verlässlichkeit und nachhaltiges Bauen stehen. Seit
+                                    diesem
+                                    Jahr konzentriert sich das erfahrene Team von Koch Immobilien ganz auf die
+                                    Vermittlung
+                                    und Vermarktung von uns gebauter hochwertiger Immobilien - und bleibt uns dabei als
+                                    enger und verlässlicher Partner verbunden. <br> Die Koch Immobilien GmbH kennt
+                                    unsere
+                                    Bauweise, unsere Qualitätsansprüche und unsere Philosophie - und ist damit der
+                                    ideale
+                                </p>
+                            </div>
+                            <p class="overflow-hidden transition-all max-h-0 duration-300" x-ref="viewMore"
+                                x-bind:style="open ? 'max-height: ' + $refs.viewMore.scrollHeight + 'px' : ''">
+                                Ansprechpartner, wenn es um den Verkauf oder die Vermietung unserer neu errichteten
+                                Immobilien geht.
+                                <br>
+                                So profitieren unsere Kunden doppelt: vom fachkundigen Bau durch unser Team und von der
+                                professionellen Vermarktung durch die Koch Immobilien GmbH. Gemeinsam schaffen wir
+                                Wohnräume
+                                mit Wert - von der Planung bis zur Schlüsselübergabe.
+                            </p>
+                            <button class="font-medium text-red" @click="open = !open">
+                                <span x-show="!open">mehr erfahren >> </span>
+                                <span x-show="open">mehr erfahren << </span>
+                            </button>
+                        </div>
+                        <div class="grid sm:grid-cols-2 font-light gap-50 items-end">
+                            <div>
+                                <img src="assets/images/old-logo.svg" alt="" class="mb-12 xl:mb-24">
+                                <div class="flex items-center gap-10 text-h3 font-medium text-black mb-4 xl:mb-8">
+                                    <img src="assets/images/right.svg" alt="" class="w-22 shrink-0">
+                                    <h4>1994 bis 2025</h4>
+                                </div>
+                                <p>
+                                    Geschäftsführer & Gründer:
+                                    Rüdiger Koch
+                                </p>
+                            </div>
+                            <div>
+                                <img src="assets/images/logo.svg" alt="" class="mb-12 xl:mb-24">
+                                <div class="flex items-center gap-10 text-h3 font-medium text-black mb-4 xl:mb-8">
+                                    <img src="assets/images/right.svg" alt="" class="w-22 shrink-0">
+                                    <h4>Seit 2025</h4>
+                                </div>
+                                <p>
+                                    Geschäftsführer:
+                                    Karsten Jung & Frank Jung
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-brown py-spc text-white" id="werte">
+            <div class="container">
+                <h2 class="title w-fit text-h3 font-medium text-[#ADA194] border-b uppercase mb-12 xl:mb-24">
+                    Ihr Projekt unsere Leidenschaft
+                </h2>
+                <h3 class="text-h1 uppercase font-medium mb-34 xl:mb-68 max-w-850">
+                    Werte, die uns leiten
+                </h3>
+                <div class="image mb-34 xl:mb-68 xxl:hidden">
+                    <img src="assets/images/Ihr-Projekt.webp" alt="" class="aspect-video object-cover">
+                </div>
+                <div class="grid lg:grid-cols-2 xxl:grid-cols-3 gap-x-30 gap-y-30 xl:gap-y-65">
+                    <div class="flex flex-col xsm:flex-row items-start gap-12">
+                        <div class="bg-red clip1 py-10 pl-15 pr-35 shrink-0">
+                            <img src="assets/images/icon-1.svg" alt="" class="w-50 xl:w-auto">
+                        </div>
+                        <div>
+                            <h4 class="text-h3 mb-7 xl:mb-15 font-medium">Vertrauen</h4>
+                            <p class="font-light">
+                                Transparenz, Fairness und Verlässlichkeit sind die Grundlage unserer Arbeit.
+                                Wir handeln professionell, sorgfältig und nachvollziehbar.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col xsm:flex-row items-start gap-12">
+                        <div class="bg-red clip1 py-10 pl-15 pr-35 shrink-0">
+                            <img src="assets/images/icon-2.svg" alt="" class="w-50 xl:w-auto">
+                        </div>
+                        <div>
+                            <h4 class="text-h3 mb-7 xl:mb-15 font-medium">Seriosität & Diskretion</h4>
+                            <p class="font-light">
+                                Ehrlichkeit, Zuverlässigkeit und Diskretion sind für uns selbstverständlich.
+                                Wir stehen zu unserem Wort -
+                                in jeder Phase Ihres Projekts.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="relative -mr-[clamp(0rem,-25.2404rem+28.8462vw,9.375rem)] hidden xxl:block">
+                        <img src="assets/images/Ihr-Projekt.webp" alt=""
+                            class="absolute bottom-0 left-0 aspect-square object-cover">
+                    </div>
+                    <div class="flex flex-col xsm:flex-row items-start gap-12">
+                        <div class="bg-red clip1 py-10 pl-15 pr-35 shrink-0">
+                            <img src="assets/images/icon-3.svg" alt="" class="w-50 xl:w-auto">
+                        </div>
+                        <div>
+                            <h4 class="text-h3 mb-7 xl:mb-15 font-medium">Leistungsspektrum</h4>
+                            <p class="font-light">
+                                Unser Leistungsspektrum umfasst den Neubau, die Sanierung und Modernisierung von Wohn-
+                                und Gewerbe-immobilien - individuell geplant, hochwertig ausgeführt und termingerecht
+                                umgesetzt.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col xsm:flex-row items-start gap-12">
+                        <div class="bg-red clip1 py-10 pl-15 pr-35 shrink-0">
+                            <img src="assets/images/icon-4.svg" alt="" class="w-50 xl:w-auto">
+                        </div>
+                        <div>
+                            <h4 class="text-h3 mb-7 xl:mb-15 font-medium">Qualität</h4>
+                            <p class="font-light">
+                                Wir setzen auf hochwertige Materialien, regionale Handwerksbetriebe und saubere
+                                Ausführung - für Ergebnisse, die überzeugen und bestehen.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col xsm:flex-row items-start gap-12">
+                        <div class="bg-red clip1 py-10 pl-15 pr-35 shrink-0">
+                            <img src="assets/images/icon-5.svg" alt="" class="w-50 xl:w-auto">
+                        </div>
+                        <div>
+                            <h4 class="text-h3 mb-7 xl:mb-15 font-medium">Kompetenz & Erfahrung</h4>
+                            <p class="font-light">
+                                Langjährige Erfahrung, fundiertes Fachwissen und ein starkes Netzwerk machen uns zu
+                                Ihrem verlässlichen Partner.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col xsm:flex-row items-start gap-12">
+                        <div class="bg-red clip1 py-10 pl-15 pr-35 shrink-0">
+                            <img src="assets/images/icon-6.svg" alt="" class="w-50 xl:w-auto">
+                        </div>
+                        <div>
+                            <h4 class="text-h3 mb-7 xl:mb-15 font-medium">Individuell & Persönlich</h4>
+                            <p class="font-light">
+                                Ihr Zuhause ist so einzigartig wie Sie. Wir entwickeln Lösungen, die zu Ihnen passen -
+                                mit Kreativität, Erfahrung und Herzblut.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col xsm:flex-row items-start gap-12">
+                        <div class="bg-red clip1 py-10 pl-15 pr-35 shrink-0">
+                            <img src="assets/images/icon-7.svg" alt="" class="w-50 xl:w-auto">
+                        </div>
+                        <div>
+                            <h4 class="text-h3 mb-7 xl:mb-15 font-medium">Fairness & Respekt</h4>
+                            <p class="font-light">
+                                Wir handeln verantwortungs- voll - gegenüber unseren Kunden, Partnern, der Umwelt und
+                                Immobilien. Denn Bauen heißt für uns: mit Respekt handeln - nachhaltig und
+                                zukunftsorientiert.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col xsm:flex-row items-start gap-12">
+                        <div class="bg-red clip1 py-10 pl-15 pr-35 shrink-0">
+                            <img src="assets/images/icon-8.svg" alt="" class="w-50 xl:w-auto">
+                        </div>
+                        <div>
+                            <h4 class="text-h3 mb-7 xl:mb-15 font-medium">Regional</h4>
+                            <p class="font-light">
+                                Wir sind im Sauerland zu Hause - hier kennen wir den Markt, die Menschen und die
+                                Besonderheiten der Region.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-spc" id="partner">
+            <div class="container">
+                <div>
+                    <h2 class="title w-fit text-h3 font-medium text-red border-b uppercase mb-8 xl:mb-17">
+                        Ansprechpartner
+                    </h2>
+                    <h3 class="text-h1 uppercase font-medium mb-14 xl:mb-28">
+                        Wir unterstützen Sie bei Ihrem Bauvorhaben
+                    </h3>
+                    <div class="grid xl:grid-cols-2 gap-30 xl:gap-40 font-light">
+                        <div class="grid sm:grid-cols-2 gap-13 xl:gap-26 items-center">
+                            <img src="assets/images/partner_small.webp" alt="Karsten Jung" class="w-full">
+                            <div>
+                                <h4 class="text-h3 font-medium mb-6 xl:mb-12">
+                                    Karsten Jung
+                                </h4>
+                                <ul class="list1 mb-11 xl:mb-22 flex flex-col gap-6">
+                                    <li>
+                                        Ankauf von Grundstücken
+                                    </li>
+                                    <li>
+                                        Projektentwicklung
+                                    </li>
+                                    <li>
+                                        Auftragsvergabe
+                                    </li>
+                                    <li>
+                                        Bauleitung
+                                    </li>
+                                </ul>
+                                <a href="tel:+4915112689566" class="text-h3 font-medium mb-11 xl:mb-22 w-full">
+                                    Mobile: 0151 - 12689566
+                                </a>
+                                <a href="kontakt.html"
+                                    class="bg-red text-white py-8 px-16 font-medium text-h3 hover:bg-brown">
+                                    Kontakt aufnehmen >
+                                </a>
+                            </div>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-13 xl:gap-26 items-center">
+                            <img src="assets/images/partner_small.webp" alt="Frank Jung" class="w-full">
+                            <div>
+                                <h4 class="text-h3 font-medium mb-6 xl:mb-12">
+                                    Frank Jung
+                                </h4>
+                                <ul class="list1 mb-11 xl:mb-22 flex flex-col gap-6">
+                                    <li>
+                                        Administrative Arbeiten
+                                    </li>
+                                    <li>
+                                        Rechnungswesen
+                                    </li>
+                                    <li>
+                                        Kundenbetreuung
+                                    </li>
+                                    <li>
+                                        Koordination Innenausbau
+                                    </li>
+                                </ul>
+                                <a href="tel:0165xxxxxxxx" class="text-h3 font-medium mb-11 xl:mb-22 w-full">
+                                    Tel: 0165 xxxxxxxx
+                                </a>
+                                <a href="kontakt.html"
+                                    class="bg-red text-white py-8 px-16 font-medium text-h3 hover:bg-brown">
+                                    Kontakt aufnehmen >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-[#42454A] relative z-10 py-spc text-white font-light mb-40">
+            <div class="container">
+                <a href="http://www.koch-immobilien-olpe.de/" target="_blank">
+                    <img src="assets/images/koch-Immobilien-logo.png" alt="Koch Immobilien logo" class="mb-32 xl:mb-64">
+                </a>
+                <h2 class="text-h2 font-medium text-[#B9A481] mb-20 xl:mb-40 uppercase">
+                    Ihr erfahrener Partner in der Immobilienvermarktung
+                </h2>
+                <div class="flex gap-30 items-start flex-col xl:flex-row mb-12 xl:mb-24 ">
+                    <div class="text w-full xl:w-9/12">
+                        <p>
+                            Die Koch Baupartner GmbH arbeitet eng mit der Koch Immobilien GmbH zusammen - ein
+                            Unternehmen mit Ursprung im Bau, Projektentwicklung und Immobilienvermittlung seit 1994.
+                        </p>
+                        <p>
+                            Nach über 31 Jahren erfolgreicher Tätigkeit als Bauunternehmen mit angeschlossener
+                            Immobilienvermittlung hat sich Koch Immobilien seit 2025 vollständig auf die professionelle
+                            Vermarktung von Immobilien spezialisiert. Die langjährige Erfahrung aus Planung, Bau und
+                            Verkauf von Wohn- und Gewerbeobjekten bildet heute das Fundament der täglichen Arbeit im
+                            Bereich der Immobilienvermittlung.
+                        </p>
+                        <p>
+                            Dank dieser umfassenden Expertise verfügt das Maklerbüro über ein professionelles
+                            Verständnis für Bauqualität, Architektur und regionale Marktbedingungen. Kunden profitieren
+                            von fundierten Wertermittlungen, maßgeschneiderten Vermarktungskonzepten und einer
+                            kompetenten Begleitung während des gesamten Verkaufs- oder Vermietungsprozesses.
+                        </p>
+                        <p>
+                            In enger Zusammenarbeit mit den neuen Geschäftsführern der Koch Baupartner G,bH verbindet
+                            das Büro weiterhin Bauerfahrung und Vermarktungskompetenz. Diese Partnerschaft schafft
+                            Synergien, die sowohl Verkäuferinnen und Verkäufern als auch Käuferinnen und Käufern einen
+                            echten Mehrwert bieten - durch Transparenz, Sicherheit und Qualität auf höchstem Niveau.
+                        </p>
+                        <p>
+                            Koch Immobilien steht für Kompetenz, Erfahrung und Engagement - und für Immobilien, die mit
+                            Fachwissen, Leidenschaft und einem klaren Blick für Wert erfolgreich vermarktet werden.
+                        </p>
+                    </div>
+                    <div class="grid sm:grid-cols-2 xl:grid-cols-1 w-full xl:w-3/12 gap-19 xl:gap-38">
+                        <a href="http://www.koch-immobilien-olpe.de/" target="_blank">
+                            <img src="assets/images/Immobilienvermarktung2.webp"
+                                alt="Ihr erfahrener Partner in der Immobilienvermarktung"
+                                class="aspect-[1.48/1] w-full">
+                        </a>
+                        <a href="http://www.koch-immobilien-olpe.de/" target="_blank">
+                            <img src="assets/images/Immobilienvermarktung.webp"
+                                alt="Ihr erfahrener Partner in der Immobilienvermarktung"
+                                class="aspect-[1.48/1] w-full">
+                        </a>
+                    </div>
+                </div>
+                <a href="http://www.koch-immobilien-olpe.de/" target="_blank"
+                    class="bg-red text-white py-8 px-16 font-medium text-h3 hover:bg-brown">
+                    Zu Koch Immobilien >
+                </a>
+            </div>
+            <div class="absolute inset-0 -z-10 opacity-2">
+                <img src="assets/images/koch-Immobilien.png" alt="Partner bg"
+                    class="size-full object-cover object-center">
+            </div>
+        </section>
+    </main>
+    <footer class="bg-red py-40 text-white font-light">
+        <div class="container">
+            <div class="grid md:grid-cols-3 xl:grid-cols-4 gap-20 md:gap-40 lg:gap-60">
+                <div>
+                    <h4>Koch Baupartner GmbH</h4>
+                    <p>Karsten Jung & Frank Jung <br> In der Trift 42 <br> 57462 Olpe</p>
+                </div>
+                <div class="xl:col-span-2">
+                    <ul>
+                        <li><a href="tel:xxxxxx">Tel: xxxxxx</a></li>
+                        <li><a href="tel:+4915112689566">Mobile: 0151 - 12689566</a></li>
+                        <li><a href="mailto:info@koch-baupartner.de">E-Mail: info@koch-baupartner.de</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <nav class="footer-nav flex flex-wrap gap-y-4 gap-x-10 items-center text-h3">
+                        <a href="#">Impressum</a>
+                        <span class="text-sm align-middle">■</span>
+                        <a href="#">Datenschutz</a>
+                    </nav>
+
+                    <small class="uppercase">© '25 | MDK Mediadesign ■</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- back to top button -->
+    <button x-data="backToTop()" x-show="visible" x-transition.opacity.duration.200 @click="scrollToTop"
+        class="fixed bottom-20 right-20 bg-red p-10 text-white z-[99999] border" aria-label="Zurück nach oben"
+        title="Zurück nach oben">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M6 15l6 -6l6 6" />
+        </svg>
+    </button>
+    <!-- back to top button -->
+
+    <script src="assets/js/swiper.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

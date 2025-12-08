@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Koch Baupartner - Ihr zuverlässiger Partner für hochwertige Bauprojekte im Kreis Olpe und Oberbergischen Kreis. Entdecken Sie unsere Leistungen und Referenzen.">
+    <title>Leistungen | Koch Baupartner</title>
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/alpine.js"></script>
+</head>
+
+<body x-data="{ isMenuOpen: false }" :class="isMenuOpen ? 'overflow-hidden mr-8' : ''">
+    <header class="py-25 min-h-90 xsm:min-h-120 flex items-center z-[99999] bg-white sticky top-0 shadow"
+        @keydown.window.escape="isMenuOpen = false">
+        <div class="container">
+            <div class="flex justify-between items-center gap-100">
+                <a href="index.html" class="w-160 xsm:w-250">
+                    <img src="assets/images/logo.svg" alt="Koch Baupartner Logo">
+                </a>
+                <button class="text-red shrink-0 border p-10 border-white hover:border-red tran_all"
+                    @click="isMenuOpen = !isMenuOpen" aria-label="Menüumschalter" title="Menüumschalter">
+                    <svg x-show="isMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                    <svg x-show="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-menu">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 8l16 0" />
+                        <path d="M4 16l16 0" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div x-show="isMenuOpen" x-transition:enter="transition-opacity ease-in-out duration-300"
+            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition-opacity ease-in-out duration-300" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0" class="fixed left-0 top-90 xsm:top-120 size-full shadow-lg z-[9999] py-6"
+            @click.outside="isMenuOpen = false" style="display: none;">
+            <div
+                class="overflow-y-auto scrollbar_none max-h-[calc(100dvh-90px)] xsm:max-h-[calc(100dvh-120px)] container font-light py-40 xl:py-115 text-h2 text-[#2E2E2E]">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:flex gap-20 xl:gap-60 flex-wrap">
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a href="index.html" @click="isMenuOpen = !isMenuOpen">
+                                Startseite
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html">
+                                Unternehmen
+                            </a>
+                        </div>
+                        <ul class="space-y-10">
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#unternehmensgeschichte"
+                                    class="link active">
+                                    Unternehmensgeschichte
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="#" class="link">
+                                    Team / Qualifikationen
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#werte" class="link">
+                                    Werte
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#partner" class="link">
+                                    Partner
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html">
+                                Leistungen
+                            </a>
+                        </div>
+                        <ul class="space-y-10">
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#was-wir-bauen" class="link">
+                                    Was wir bauen
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#wie-wir-bauen" class="link">
+                                    Wie wir bauen
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#weitere-leistungen"
+                                    class="link">
+                                    Weitere Leistungen
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="referenzen.html">
+                                Referenzen
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html">
+                                Kontakt
+                            </a>
+                        </div>
+                        <ul class="space-y-10">
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html#kontaktformular" class="link">
+                                    Kontaktformular
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html#ansprechpartner" class="link">
+                                    Ansprechpartner
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="#">
+                                Aktuelles
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-0 -z-50">
+                <img src="assets/images/menu-bg.png" alt="" class="size-full object-cover object-center">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="relative z-10">
+            <div class="min-h-[calc(100dvh-90px)] xsm:min-h-[calc(100dvh-120px)] flex items-end">
+                <div class="p-10 pb-50 sm:p-30 sm:pb-60 xl:py-150 xl:pl-0 w-full">
+                    <div class="bg-red/90 xl:w-[51%] text-white p-20 xsm:p-30 xl:pl-[calc((100%-1336px)/2)]">
+                        <div class="xl:pl-16">
+                            <h1 class="text-h1 uppercase font-medium mb-10">
+                                Massiv gebaut. Präzise geplant. Zuverlässig ausgeführt.
+                            </h1>
+                            <div class="text mb-8 xl:mb-15 text-h3">
+                                <p>
+                                    Wir schaffen langlebige Werte - von der Bauplanung bis zur schlüsselfertigen
+                                    Übergabe, alles aus einer Hand.
+                                </p>
+                            </div>
+                            <a href="unternehmen.html" class="animated_line uppercase text-h3 font-medium">
+                                Jetzt anfragen >>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 -z-10">
+                        <img src="assets/images/leistungen-hero-bg.webp" alt="Leistungen hero bg"
+                            class="size-full object-cover object-center" fetchpriority="high" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-spc z-20 relative">
+            <div class="not-xl:container not-xl:mx-auto 3xl:pl-[calc((100%-1352px)/2)] px-16 sm:px-55">
+                <div class="flex flex-col xl:flex-row gap-23 xl:gap-46">
+                    <div class="xl:w-7/12 flex flex-col justify-center">
+                        <h2 class="title w-fit text-h3 font-medium text-red border-b uppercase mb-8 xl:mb-17">
+                            Leistungen
+                        </h2>
+                        <h3 class="text-h1 uppercase font-medium mb-14 xl:mb-28 max-w-md">
+                            Wir bieten Lösungen, die Bestand haben
+                        </h3>
+                        <div class="font-light mb-22 xl:mb-44" x-data="{open: false}">
+                            <div class="text">
+                                <p>
+                                    Als erfahrenes Bauunternehmen realisieren wir Bauprojekte jeder Art - vom
+                                    Einfamilienhaus über Mehrfamilienhäuser bis hin zu modernen Gewerbebauten. Wir
+                                    stehen für Qualität, Zuverlässigkeit und eine Bauweise, die Funktionalität,
+                                    Langlebigkeit und Ästhetik verbindet. Unsere Gebäude entstehen in massiver Bauweise,
+                                    die für Stabilität, Energieeffizienz und Werterhalt steht. Ob Neubau, Sanierung oder
+                                    Umbau - wir bieten Ihnen alle Leistungen rund ums Bauen aus einer Hand. Vom soliden
+                                    Rohbau bis zum schlüsselfertigen Haus übernehmen wir die komplette Ausführung Ihres
+                                </p>
+                            </div>
+                            <p class="overflow-hidden transition-all max-h-0 duration-300" x-ref="viewMore"
+                                x-bind:style="open ? 'max-height: ' + $refs.viewMore.scrollHeight + 'px' : ''">
+                                Projekts. Dabei setzen wir auf hochwertige Materialien, präzises Handwerk und moderne,
+                                energieeffiziente Technik, um nachhaltige Werte zu schaffen. Mit unserer Bauplanung,
+                                Beratung und Projektsteuerung begleiten wir Sie in jeder Phase Ihres Bauvorhabens. Wir
+                                koordinieren alle Abläufe, behalten Kosten und Termine im Blick und sorgen für eine
+                                reibungslose Umsetzung - transparent, effizient und partnerschaftlich. Egal ob privates
+                                Traumhaus oder gewerblicher Neubau: Wir bauen zuverlässig, wirtschaftlich und mit
+                                Leidenschaft - in Massivbauweise, für Ergebnisse, die überzeugen und Generationen
+                                überdauern.
+                            </p>
+                            <button class="font-medium text-red" @click="open = !open">
+                                <span x-show="!open">mehr erfahren >> </span>
+                                <span x-show="open">mehr erfahren << </span>
+                            </button>
+                        </div>
+                        <a href="kontakt.html"
+                            class="bg-red text-white py-8 px-16 font-medium text-h3 hover:bg-brown w-fit">
+                            Kontakt aufnehmen >
+                        </a>
+                    </div>
+                    <div class="img xl:w-5/12">
+                        <img src="assets/images/Ihr-Projekt.webp" alt="Wir bieten Lösungen, die Bestand haben"
+                            class="w-full aspect-video object-cover xl:aspect-[.93/1] xxl:-mt-130">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="pb-spc" id="was-wir-bauen">
+            <div class="container">
+                <h2 class="text-h1 uppercase font-medium mb-10 xl:mb-20">
+                    Was wir bauen
+                </h2>
+                <div class="text mb-40 xl:mb-80 font-light">
+                    <p>
+                        Als erfahrenes Bauunternehmen realisieren wir Bauprojekte jeder Größenordnung - vom privaten
+                        Eigenheim bis hin zu komplexen Gewerbebauten. <br>
+                        Wir bauen Einfamilienhäuser, Mehrfamilienhäuser und Gewerbeimmobilien, die höchsten
+                        Qualitätsansprüchen gerecht werden.
+                        Dabei legen wir großen Wert auf eine individuelle Planung, hochwertige Materialien und eine
+                        präzise Ausführung. Egal ob klassisch, modern oder energieeffizient - wir schaffen Gebäude, die
+                        in Funktion, Design und Nachhaltigkeit überzeugen. <br>
+                        Unser Ziel ist es, bleibende Werte zu schaffen: für Familien, Investoren und Unternehmen, die
+                        auf solide Bauqualität und termingerechte Umsetzung setzen.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 font-light gap-30 xxl:gap-80">
+                    <div class="bg-gray p-20 mt-55">
+                        <div class="flex items-end gap-10 mb-15 xl:mb-30">
+                            <img src="assets/images/Einfamilien-häuser.svg" alt=""
+                                class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
+                            <h3 class="text-h3 font-medium uppercase">
+                                Einfamilien - häuser
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Wir realisieren Ihr Traumhaus - individuell geplant, solide gebaut und ganz nach Ihren
+                                Wünschen. Von der ersten Idee bis zur Schlüsselübergabe schaffen wir Wohnräume, in denen
+                                Sie sich rundum wohlfühlen.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-gray p-20 mt-55">
+                        <div class="flex items-end gap-10 mb-15 xl:mb-30">
+                            <img src="assets/images/Mehrfamilien-häuser.svg" alt=""
+                                class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
+                            <h3 class="text-h3 font-medium uppercase">
+                                Mehrfamilien - häuser
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Ob zur Eigennutzung oder als Investment: Wir bauen Mehrfamilienhäuser mit durchdachter
+                                Planung, hoher Bauqualität und moderner Architektur - effizient, langlebig und
+                                wertbeständig.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-gray p-20 mt-55">
+                        <div class="flex items-end gap-10 mb-15 xl:mb-30">
+                            <img src="assets/images/Gewerbe-bau.svg" alt=""
+                                class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
+                            <h3 class="text-h3 font-medium uppercase">
+                                Gewerbe - bau
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Vom Bürogebäude bis zur Produktionshalle: Wir entwickeln und errichten Gewerbebauten,
+                                die optimal auf Ihre betrieblichen Anforderungen abgestimmt sind - funktional,
+                                wirtschaftlich und termingerecht.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="pb-spc" id="wie-wir-bauen">
+            <div class="container">
+                <h2 class="text-h1 uppercase font-medium mb-10 xl:mb-20">
+                    Wie wir bauen
+                </h2>
+                <div class="text mb-40 xl:mb-80 font-light">
+                    <p>
+                        Wir bauen zuverlässig, effizient und mit einem klaren Anspruch an Qualität. Unser
+                        Leistungsspektrum reicht vom Rohbau über den Schlüsselfertigbau bis hin zu Sanierung,
+                        Modernisierung, Umbau und Anbau. <br>
+                        Dabei kombinieren wir handwerkliche Präzision mit moderner Technik und energieeffizienten
+                        Bauweisen. Ob Neubau oder Bestand - wir arbeiten mit erfahrenen Fachkräften, transparenten
+                        Prozessen und nachhaltigen Materialien. <br>
+                        Durch sorgfältige Planung und fachgerechte Ausführung stellen wir sicher, dass jedes Projekt
+                        wirtschaftlich, langlebig und zukunftssicher umgesetzt wird. Wer mit uns baut, profitiert von
+                        Erfahrung, Zuverlässigkeit und echter Leidenschaft fürs Bauen.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 font-light gap-30 xxl:gap-80">
+                    <div class="bg-gray p-20 mt-55">
+                        <div class="flex items-end gap-10 mb-15 xl:mb-30">
+                            <img src="assets/images/Rohbau.svg" alt=""
+                                class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
+                            <h3 class="text-h3 font-medium uppercase">
+                                Rohbau
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Wir legen das Fundament für Ihr Projekt - präzise, stabil und auf höchstem
+                                handwerklichen Niveau. Unser erfahrenes Team sorgt für einen reibungslosen Ablauf und
+                                höchste Qualität in jeder Bauphase.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-gray p-20 mt-55">
+                        <div class="flex items-end gap-10 mb-15 xl:mb-30">
+                            <img src="assets/images/Schlüssel-fertigbau.svg" alt=""
+                                class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
+                            <h3 class="text-h3 font-medium uppercase">
+                                Schlüssel - fertigbau
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Alles aus einer Hand:
+                                Wir übernehmen die komplette Ausführung Ihres Bauvorhabens bis zur bezugsfertigen
+                                Übergabe - zuverlässig, transparent und termintreu.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-gray p-20 mt-55">
+                        <div class="flex items-end gap-10 mb-15 xl:mb-30">
+                            <img src="assets/images/Sanierung&Modernisierung.svg" alt=""
+                                class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
+                            <h3 class="text-h3 font-medium uppercase">
+                                Sanierung & Modernisierung
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Wir bringen Bestandsgebäude auf den neuesten Stand - technisch, energetisch und optisch.
+                                So erhalten Sie neuen Wohnkomfort und steigern gleichzeitig den Wert Ihrer Immobilie.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-gray p-20 mt-55">
+                        <div class="flex items-end gap-10 mb-15 xl:mb-30">
+                            <img src="assets/images/Umbau&Anbau.svg" alt=""
+                                class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
+                            <h3 class="text-h3 font-medium uppercase">
+                                Umbau & Anbau
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Mehr Platz, neue Nutzung oder moderne Raumaufteilung - wir gestalten Ihre Immobilie nach
+                                Ihren Vorstellungen um. Präzise Planung und saubere Ausführung sind dabei
+                                selbstverständlich.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-gray p-20 mt-55">
+                        <div class="flex items-end gap-10 mb-15 xl:mb-30">
+                            <img src="assets/images/Energie-effizient.svg" alt=""
+                                class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
+                            <h3 class="text-h3 font-medium uppercase">
+                                Energie - effizient
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Nachhaltig bauen heißt zukunftssicher bauen. Wir setzen auf energieeffiziente Bauweisen
+                                und moderne Technologien, um Ressourcen zu schonen und Ihre Betriebskosten dauerhaft zu
+                                senken.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="pb-spc" id="weitere-leistungen">
+            <div class="container">
+                <h2 class="text-h1 uppercase font-medium mb-10 xl:mb-20">
+                    Weitere Leistungen
+                </h2>
+                <div class="text mb-40 xl:mb-80 font-light">
+                    <p>
+                        Neben der eigentlichen Bauausführung bieten wir Ihnen umfassende Dienstleistungen rund um Ihr
+                        Bauprojekt. Von der Bauplanung und Beratung bis zum professionellen Baumanagement und
+                        Projektsteuerung begleiten wir Sie in jeder Phase. <br>
+                        Wir unterstützen Sie bei der Genehmigungsplanung, der Kostenkontrolle und der Koordination aller
+                        Gewerke - damit Ihr Bauvorhaben reibungslos und termingerecht realisiert wird. <br>
+                        Mit klarer Kommunikation, technischer Kompetenz und einem starken Netzwerk an Partnern sorgen
+                        wir für Transparenz und Sicherheit - von der ersten Idee bis zur Fertigstellung Ihres Projekts.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 font-light gap-30 xxl:gap-80">
+                    <div class="bg-gray p-20 mt-55">
+                        <div class="flex items-end gap-10 mb-15 xl:mb-30">
+                            <img src="assets/images/Bauplanung&Beratung.svg" alt=""
+                                class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
+                            <h3 class="text-h3 font-medium uppercase">
+                                Bauplanung & Beratung
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Wir begleiten Sie von Anfang an - mit fachkundiger Beratung, individueller Planung und
+                                transparenter Kostenkalkulation. So wird Ihr Bauprojekt von Beginn an auf ein solides
+                                Fundament gestellt.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-gray p-20 mt-55">
+                        <div class="flex items-end gap-10 mb-15 xl:mb-30">
+                            <img src="assets/images/Baumanagement.svg" alt=""
+                                class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
+                            <h3 class="text-h3 font-medium uppercase">
+                                Baumanagement & Projektsteuerung
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Termine, Qualität, Kosten - wir behalten alles im Blick. Mit professionellem
+                                Baumanagement sorgen wir dafür, dass Ihr Projekt effizient, planmäßig und erfolgreich
+                                umgesetzt wird.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-gray p-20 mt-55">
+                        <div class="flex items-end gap-10 mb-15 xl:mb-30">
+                            <img src="assets/images/Innenausbau.svg" alt=""
+                                class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
+                            <h3 class="text-h3 font-medium uppercase">
+                                Innenausbau
+                            </h3>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Wir gestalten Ihre Räume nach Ihren Wünschen - hochwertig, funktional und termingerecht.
+                                Vom Trockenbau bis zu Bodenbelägen und Türen übernehmen wir den kompletten Innenausbau.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-red py-40 text-white font-light">
+        <div class="container">
+            <div class="grid md:grid-cols-3 xl:grid-cols-4 gap-20 md:gap-40 lg:gap-60">
+                <div>
+                    <h4>Koch Baupartner GmbH</h4>
+                    <p>Karsten Jung & Frank Jung <br> In der Trift 42 <br> 57462 Olpe</p>
+                </div>
+                <div class="xl:col-span-2">
+                    <ul>
+                        <li><a href="tel:xxxxxx">Tel: xxxxxx</a></li>
+                        <li><a href="tel:+4915112689566">Mobile: 0151 - 12689566</a></li>
+                        <li><a href="mailto:info@koch-baupartner.de">E-Mail: info@koch-baupartner.de</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <nav class="footer-nav flex flex-wrap gap-y-4 gap-x-10 items-center text-h3">
+                        <a href="#">Impressum</a>
+                        <span class="text-sm align-middle">■</span>
+                        <a href="#">Datenschutz</a>
+                    </nav>
+
+                    <small class="uppercase">© '25 | MDK Mediadesign ■</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- back to top button -->
+    <button x-data="backToTop()" x-show="visible" x-transition.opacity.duration.200 @click="scrollToTop"
+        class="fixed bottom-20 right-20 bg-red p-10 text-white z-[99999] border" aria-label="Zurück nach oben"
+        title="Zurück nach oben">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M6 15l6 -6l6 6" />
+        </svg>
+    </button>
+    <!-- back to top button -->
+
+    <script src="assets/js/swiper.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

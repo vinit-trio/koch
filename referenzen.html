@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Koch Baupartner - Ihr zuverlässiger Partner für hochwertige Bauprojekte im Kreis Olpe und Oberbergischen Kreis. Entdecken Sie unsere Leistungen und Referenzen.">
+    <title>Referenzen | Koch Baupartner</title>
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/alpine.js"></script>
+</head>
+
+<body x-data="{ isMenuOpen: false }" :class="isMenuOpen ? 'overflow-hidden mr-8' : ''">
+    <header class="py-25 min-h-90 xsm:min-h-120 flex items-center z-[99999] bg-white sticky top-0 shadow"
+        @keydown.window.escape="isMenuOpen = false">
+        <div class="container">
+            <div class="flex justify-between items-center gap-100">
+                <a href="index.html" class="w-160 xsm:w-250">
+                    <img src="assets/images/logo.svg" alt="Koch Baupartner Logo">
+                </a>
+                <button class="text-red shrink-0 border p-10 border-white hover:border-red tran_all"
+                    @click="isMenuOpen = !isMenuOpen" aria-label="Menüumschalter" title="Menüumschalter">
+                    <svg x-show="isMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                    <svg x-show="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-menu">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 8l16 0" />
+                        <path d="M4 16l16 0" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div x-show="isMenuOpen" x-transition:enter="transition-opacity ease-in-out duration-300"
+            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition-opacity ease-in-out duration-300" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0" class="fixed left-0 top-90 xsm:top-120 size-full shadow-lg z-[9999] py-6"
+            @click.outside="isMenuOpen = false" style="display: none;">
+            <div
+                class="overflow-y-auto scrollbar_none max-h-[calc(100dvh-90px)] xsm:max-h-[calc(100dvh-120px)] container font-light py-40 xl:py-115 text-h2 text-[#2E2E2E]">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:flex gap-20 xl:gap-60 flex-wrap">
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a href="index.html" @click="isMenuOpen = !isMenuOpen">
+                                Startseite
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html">
+                                Unternehmen
+                            </a>
+                        </div>
+                        <ul class="space-y-10">
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#unternehmensgeschichte"
+                                    class="link active">
+                                    Unternehmensgeschichte
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="#" class="link">
+                                    Team / Qualifikationen
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#werte" class="link">
+                                    Werte
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#partner" class="link">
+                                    Partner
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html">
+                                Leistungen
+                            </a>
+                        </div>
+                        <ul class="space-y-10">
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#was-wir-bauen" class="link">
+                                    Was wir bauen
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#wie-wir-bauen" class="link">
+                                    Wie wir bauen
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#weitere-leistungen"
+                                    class="link">
+                                    Weitere Leistungen
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="referenzen.html">
+                                Referenzen
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html">
+                                Kontakt
+                            </a>
+                        </div>
+                        <ul class="space-y-10">
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html#kontaktformular" class="link">
+                                    Kontaktformular
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html#ansprechpartner" class="link">
+                                    Ansprechpartner
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="#">
+                                Aktuelles
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-0 -z-50">
+                <img src="assets/images/menu-bg.png" alt="" class="size-full object-cover object-center">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="relative z-10">
+            <div class="min-h-[calc(100dvh-90px)] xsm:min-h-[calc(100dvh-120px)] flex items-end">
+                <div class="p-10 pb-50 sm:p-30 sm:pb-60 xl:py-150 xl:pl-0 w-full">
+                    <div class="bg-red/90 xl:w-[51%] text-white p-20 xsm:p-30 xl:pl-[calc((100%-1336px)/2)]">
+                        <div class="xl:pl-16">
+                            <h1 class="text-h1 uppercase font-medium mb-10">
+                                Erfahrung in jedem Stein: Unsere abgeschlossenen Projekte
+                            </h1>
+                            <div class="text mb-8 xl:mb-15 text-h3">
+                                <p>
+                                    Wir bauen nicht nur, sondern schaffen vertrauensvolle Partnerschaften mit unseren
+                                    Kunden - vom ersten Entwurf bis zur Schlüsselübergabe.
+                                </p>
+                            </div>
+                            <a href="unternehmen.html" class="animated_line uppercase text-h3 font-medium">
+                                Jetzt anfragen >>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 -z-10">
+                        <img src="assets/images/ref-hero-bg.webp" alt="Referenzen hero bg"
+                            class="size-full object-cover object-center" fetchpriority="high" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-spc z-20 relative">
+            <div class="not-xl:container not-xl:mx-auto 3xl:pl-[calc((100%-1352px)/2)] px-16 sm:px-55">
+                <div class="flex flex-col xl:flex-row gap-23 xl:gap-46">
+                    <div class="xl:w-7/12 flex flex-col justify-center">
+                        <h2 class="title w-fit text-h3 font-medium text-red border-b uppercase mb-8 xl:mb-17">
+                            Referenzen
+                        </h2>
+                        <h3 class="text-h1 uppercase font-medium mb-14 xl:mb-28 max-w-lg">
+                            Erfolgreich umgesetzt, verlässlich gebaut
+                        </h3>
+                        <div class="font-light mb-22 xl:mb-44 text">
+                            <p>
+                                Unsere Referenzen spiegeln die Philosophie unseres Bauunternehmens wider: Qualität,
+                                Beständigkeit und Verantwortung. Jedes Projekt - ob Neubau, Sanierung oder komplexe
+                                Gewerbebauvorhaben - zeigt unser handwerkliches Können, unsere Präzision und unser
+                                Engagement für termingerechte Umsetzung.
+                                Wir legen großen Wert darauf, dass unsere Kunden zufrieden sind. Deshalb
+                                dokumentieren wir unsere Arbeiten sorgfältig und präsentieren abgeschlossene
+                                Projekte transparent. So können Sie sich ein klares Bild von unserer Expertise
+                                machen und sehen, dass wir Bauvorhaben zuverlässig, hochwertig und nachhaltig
+                                realisieren.
+                            </p>
+                        </div>
+                        <a href="kontakt.html"
+                            class="bg-red text-white py-8 px-16 font-medium text-h3 hover:bg-brown w-fit">
+                            Kontakt aufnehmen >
+                        </a>
+                    </div>
+                    <div class="img xl:w-5/12">
+                        <img src="assets/images/Ihr-Projekt.webp" alt="Wir bieten Lösungen, die Bestand haben"
+                            class="w-full aspect-video object-cover xl:aspect-[.93/1] xxl:-mt-130">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-60 relative z-10 bg-gray xxl:mb-40">
+            <div class="container">
+                <h2 class="title w-fit text-h3 font-medium text-red border-b uppercase mb-26 xl:mb-52">
+                    Referenzeobjekte
+                </h2>
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-16 xxl:gap-60 mb-26 xl:mb-56">
+                    <div class="bg-[#EBECEC] flex flex-col">
+                        <a href="referenzen-einzelansicht.html" class="aspect-[1.5/1]">
+                            <img src="assets/images/Referenzen1.png" alt="Referenzen" class="size-full object-cover">
+                        </a>
+                        <div class="p-15 grow flex flex-col">
+                            <h3 class="text-h3 from-orange-50 mb-5 xl:mb-11">
+                                Mehrfamilienhaus in Drolshagen - Jetzt Besichtigung vereinbaren
+                            </h3>
+                            <div class="text font-light mb-12 xl:mb-24">
+                                <p>
+                                    Unser Mehrfamilienhaus in Drolshagen kann ab sofort besichtigt werden
+                                </p>
+                            </div>
+                            <a href="referenzen-einzelansicht.html" class="text-red font-medium mt-auto">
+                                Mehr erfahren >>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-[#EBECEC] flex flex-col">
+                        <a href="referenzen-einzelansicht.html" class="aspect-[1.5/1]">
+                            <img src="assets/images/Referenzen2.png" alt="Referenzen" class="size-full object-cover">
+                        </a>
+                        <div class="p-15 grow flex flex-col">
+                            <h3 class="text-h3 from-orange-50 mb-5 xl:mb-11">
+                                Es kann losgehen: Spatenstich in Olpe-Stachelau
+                            </h3>
+                            <div class="text font-light mb-12 xl:mb-24">
+                                <p>
+                                    Wir starten it unserem neuen Bauvorhaben in Stachelau. Zukünftig
+                                </p>
+                            </div>
+                            <a href="referenzen-einzelansicht.html" class="text-red font-medium mt-auto">
+                                Mehr erfahren >>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-[#EBECEC] flex flex-col">
+                        <a href="referenzen-einzelansicht.html" class="aspect-[1.5/1]">
+                            <img src="assets/images/Referenzen3.png" alt="Referenzen" class="size-full object-cover">
+                        </a>
+                        <div class="p-15 grow flex flex-col">
+                            <h3 class="text-h3 from-orange-50 mb-5 xl:mb-11">
+                                Rohbau fertiggestellt - Schlüsselfertige Übergabe im Mai
+                            </h3>
+                            <div class="text font-light mb-12 xl:mb-24">
+                                <p>
+                                    Nächste Woche beginnen wir mit dem Innenausbau des Einfamilienhauses in
+                                </p>
+                            </div>
+                            <a href="referenzen-einzelansicht.html" class="text-red font-medium mt-auto">
+                                Mehr erfahren >>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-0 -z-10">
+                <img src="assets/images/wall-texture.webp" alt="Aktuelles backgound image"
+                    class="size-full object-cover">
+            </div>
+        </section>
+    </main>
+    <footer class="bg-red py-40 text-white font-light">
+        <div class="container">
+            <div class="grid md:grid-cols-3 xl:grid-cols-4 gap-20 md:gap-40 lg:gap-60">
+                <div>
+                    <h4>Koch Baupartner GmbH</h4>
+                    <p>Karsten Jung & Frank Jung <br> In der Trift 42 <br> 57462 Olpe</p>
+                </div>
+                <div class="xl:col-span-2">
+                    <ul>
+                        <li><a href="tel:xxxxxx">Tel: xxxxxx</a></li>
+                        <li><a href="tel:+4915112689566">Mobile: 0151 - 12689566</a></li>
+                        <li><a href="mailto:info@koch-baupartner.de">E-Mail: info@koch-baupartner.de</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <nav class="footer-nav flex flex-wrap gap-y-4 gap-x-10 items-center text-h3">
+                        <a href="#">Impressum</a>
+                        <span class="text-sm align-middle">■</span>
+                        <a href="#">Datenschutz</a>
+                    </nav>
+
+                    <small class="uppercase">© '25 | MDK Mediadesign ■</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- back to top button -->
+    <button x-data="backToTop()" x-show="visible" x-transition.opacity.duration.200 @click="scrollToTop"
+        class="fixed bottom-20 right-20 bg-red p-10 text-white z-[99999] border" aria-label="Zurück nach oben"
+        title="Zurück nach oben">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M6 15l6 -6l6 6" />
+        </svg>
+    </button>
+    <!-- back to top button -->
+
+    <script src="assets/js/swiper.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

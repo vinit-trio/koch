@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="theme-color" content="#A5170E">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Koch | Koch Baupartner - Wo Qualität ein Zuhause findet">
+
+    <title>Koch | Koch Baupartner - Wo Qualität ein Zuhause findet</title>
+
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script defer src="assets/js/alpine.js"></script>
+</head>
+
+<body x-data="{ isMenuOpen: false }" :class="isMenuOpen ? 'overflow-hidden pr-8' : ''">
+    <header class="py-25 min-h-90 xsm:min-h-120 flex items-center z-[99999] bg-white sticky top-0 shadow"
+        @keydown.window.escape="isMenuOpen = false">
+        <div class="container">
+            <div class="flex justify-between items-center gap-100">
+                <a href="index.html" class="w-160 xsm:w-250">
+                    <img src="assets/images/logo.svg" alt="Koch Baupartner Logo">
+                </a>
+                <button class="text-red shrink-0 border p-10 border-white hover:border-red tran_all"
+                    @click="isMenuOpen = !isMenuOpen" aria-label="Menüumschalter" title="Menüumschalter">
+                    <svg x-show="isMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                    <svg x-show="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-menu">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 8l16 0" />
+                        <path d="M4 16l16 0" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div x-show="isMenuOpen" x-transition:enter="transition-opacity ease-in-out duration-300"
+            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition-opacity ease-in-out duration-300" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0" class="fixed left-0 top-90 xsm:top-120 size-full shadow-lg z-[9999] py-6"
+            @click.outside="isMenuOpen = false" style="display: none;">
+            <div
+                class="overflow-y-auto scrollbar_none max-h-[calc(100dvh-90px)] xsm:max-h-[calc(100dvh-120px)] container font-light py-40 xl:py-115 text-h2 text-[#2E2E2E]">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:flex gap-20 xl:gap-60 flex-wrap">
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a href="index.html" @click="isMenuOpen = !isMenuOpen">
+                                Startseite
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html">
+                                Unternehmen
+                            </a>
+                        </div>
+                        <ul class="space-y-10">
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#unternehmensgeschichte"
+                                    class="link active">
+                                    Unternehmensgeschichte
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="#" class="link">
+                                    Team / Qualifikationen
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#werte" class="link">
+                                    Werte
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#partner" class="link">
+                                    Partner
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html">
+                                Leistungen
+                            </a>
+                        </div>
+                        <ul class="space-y-10">
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#was-wir-bauen" class="link">
+                                    Was wir bauen
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#wie-wir-bauen" class="link">
+                                    Wie wir bauen
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#weitere-leistungen"
+                                    class="link">
+                                    Weitere Leistungen
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="referenzen.html">
+                                Referenzen
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html">
+                                Kontakt
+                            </a>
+                        </div>
+                        <ul class="space-y-10">
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html#kontaktformular" class="link">
+                                    Kontaktformular
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html#ansprechpartner" class="link">
+                                    Ansprechpartner
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <div class="title text-[#BC2D33] font-medium uppercase">
+                            <a @click="isMenuOpen = !isMenuOpen" href="#">
+                                Aktuelles
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-0 -z-50">
+                <img src="assets/images/menu-bg.png" alt="" class="size-full object-cover object-center">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="relative z-10">
+            <div class="swiper hero_swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide bg-white">
+                        <div class="min-h-[calc(100dvh-90px)] xsm:min-h-[calc(100dvh-120px)] flex items-end">
+                            <div class="p-10 pb-50 sm:p-30 sm:pb-60 xl:py-150 xl:pl-0 w-full">
+                                <div
+                                    class="bg-red/90 xl:w-[51%] text-white p-20 xsm:p-30 xl:pl-[calc((100%-1336px)/2)]">
+                                    <div class="xl:pl-16">
+                                        <h1 class="text-h1 uppercase font-medium mb-10">
+                                            Koch Baupartner - <br>
+                                            Wo Qualität ein Zuhause findet
+                                        </h1>
+                                        <div class="text mb-8 xl:mb-15 text-h3">
+                                            <p>
+                                                Mit innovativen Lösungen, regionaler Verbundenheit und handwerklicher
+                                                Präzision
+                                                gestalten
+                                                wir Bauprojekte, die Bestand haben.
+                                            </p>
+                                        </div>
+                                        <a href="unternehmen.html" class="animated_line uppercase text-h3 font-medium">
+                                            Unternehmen >>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="absolute inset-0 -z-10">
+                                    <img src="assets/images/hero-bg.webp" alt=""
+                                        class="size-full object-cover object-center" fetchpriority="high"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white">
+                        <div class="min-h-[calc(100dvh-90px)] xsm:min-h-[calc(100dvh-120px)] flex items-end">
+                            <div class="p-10 pb-50 sm:p-30 sm:pb-60 xl:py-150 xl:pl-0 w-full">
+                                <div
+                                    class="bg-red/90 xl:w-[51%] text-white p-20 xsm:p-30 xl:pl-[calc((100%-1336px)/2)]">
+                                    <div class="xl:pl-16">
+                                        <h1 class="text-h1 uppercase font-medium mb-10">
+                                            Koch Baupartner - <br>
+                                            Wo Qualität ein Zuhause findet
+                                        </h1>
+                                        <div class="text mb-8 xl:mb-15 text-h3">
+                                            <p>
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
+                                                natus?
+                                            </p>
+                                        </div>
+                                        <a href="unternehmen.html" class="animated_line uppercase text-h3 font-medium">
+                                            Unternehmen >>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="absolute inset-0 -z-10">
+                                    <img src="assets/images/hero-bg.webp" alt=""
+                                        class="size-full object-cover object-center" fetchpriority="high"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white">
+                        <div class="min-h-[calc(100dvh-90px)] xsm:min-h-[calc(100dvh-120px)] flex items-end">
+                            <div class="p-10 pb-50 sm:p-30 sm:pb-60 xl:py-150 xl:pl-0 w-full">
+                                <div
+                                    class="bg-red/90 xl:w-[51%] text-white p-20 xsm:p-30 xl:pl-[calc((100%-1336px)/2)]">
+                                    <div class="xl:pl-16">
+                                        <h1 class="text-h1 uppercase font-medium mb-10">
+                                            Koch Baupartner - <br>
+                                            Wo Qualität ein Zuhause findet
+                                        </h1>
+                                        <div class="text mb-8 xl:mb-15 text-h3">
+                                            <p>
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur ex
+                                                vero asperiores magni tempore rem nam earum pariatur aut sapiente ea,
+                                                est sit molestias reiciendis facilis corporis, quos dolor error.
+                                            </p>
+                                        </div>
+                                        <a href="unternehmen.html" class="animated_line uppercase text-h3 font-medium">
+                                            Unternehmen >>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="absolute inset-0 -z-10">
+                                    <img src="assets/images/hero-bg.webp" alt=""
+                                        class="size-full object-cover object-center" fetchpriority="high"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="py-spc">
+            <div class="container">
+                <div class="flex flex-col lg:flex-row gap-20 md:gap-40">
+                    <div class="img w-full lg:w-1/2 relative aspect-video lg:min-h-500">
+                        <img src="assets/images/Herzlich-Willkommen.webp" alt="Herzlich Willkommen"
+                            class="absolute inset-0 size-full object-cover object-center">
+                    </div>
+                    <div class="content w-full lg:w-1/2 xl:py-50">
+                        <h2 class="title w-fit text-h3 font-medium text-red border-b uppercase mb-8 xl:mb-17">
+                            Herzlich Willkommen
+                        </h2>
+                        <h3 class="text-h1 uppercase font-medium mb-14 xl:mb-28">
+                            Bauen ist unser Handwerk - Vertrauen unser Baustoff
+                        </h3>
+                        <div class="text font-light mb-14 xl:mb-28">
+                            <p>
+                                Mit langjähriger Erfahrung, handwerklicher Präzision und regionaler Verbundenheit
+                                realisieren wir Bauprojekte von der Planung bis zur Fertigstellung. Ob Neubau, Umbau
+                                oder Sanierung - wir stehen für Qualität, Verlässlichkeit und faire Partnerschaft.
+                                Überzeugen Sie sich von unserer Arbeit und entdecken Sie, was wir für Ihr Bauvorhaben
+                                tun können.
+                            </p>
+                        </div>
+                        <div class="grid xl:grid-cols-2 mb-18 xl:mb-36 gap-16 xl:gap-25">
+                            <div>
+                                <h4 class="flex items-center gap-6 mb-4 xl:mb-8">
+                                    <img src="assets/images/right.svg" alt="">
+                                    <span>Referenzen</span>
+                                </h4>
+                                <div class="text font-light">
+                                    <p>
+                                        Qualität und Zuverlässigkeit stehen bei uns an erster Stelle - Erfahrung, die
+                                        überzeugt.
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="flex items-center gap-6 mb-4 xl:mb-8">
+                                    <img src="assets/images/right.svg" alt="">
+                                    <span>Persönliche Ansprechpartner</span>
+                                </h4>
+                                <div class="text font-light">
+                                    <p>
+                                        Als regionales Bauunternehmen setzen wir auf persönliche Betreuung und
+                                        partnerschaftliche Zusammenarbeit.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="kontakt.html" class="bg-red text-white py-8 px-16 font-medium text-h3 hover:bg-brown">
+                            Kontakt aufnehmen >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-gray relative z-20 pt-50">
+            <div class="container">
+                <div class="flex flex-col lg:flex-row gap-20 md:gap-40">
+                    <div class="content w-full xl:w-[60%] xxl:w-[47%] xl:py-50">
+                        <h2 class="title w-fit text-h3 font-medium text-red border-b uppercase mb-8 xl:mb-17">
+                            Unternehmen
+                        </h2>
+                        <h3 class="text-h1 uppercase font-medium mb-14 xl:mb-28">
+                            Warum Sie auf uns bauen können
+                        </h3>
+                        <div class="text font-light mb-14 xl:mb-28">
+                            <p>
+                                Als erfahrenes Bauunternehmen aus dem Kreis Olpe und dem Oberbergischen Kreis
+                                realisieren wir Projekte jeder Größe zuverlässig und präzise. Wir überzeugen durch
+                                nachweisbare Erfahrung, fachliche Qualifikationen, transparente Projektsteuerung und
+                                hochwertige, nachhaltige Bauweise. So ist Ihr Bauvorhaben vom ersten Planungsgespräch
+                                bis zur schlüsselfertigen Übergabe in besten Händen.
+                            </p>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-16 xl:gap-30">
+                            <div class="bg-white p-10 xxl:pt-28 flex flex-col justify-between shadow-1 relative cursor-pointer select-none"
+                                x-data="{ open: false }" @click="open = !open">
+                                <div class="flex items-center gap-6 mb-4 xl:mb-8 text-h3 font-medium">
+                                    <img src="assets/images/right.svg" alt="" class="w-24 xxl:w-36 shrink-0">
+                                    <h4>Erfahrung & Referenzen</h4>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="mx-auto mt-auto text-red"
+                                    :class="{'rotate-180': open}">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M6 9l6 6l6 -6" />
+                                </svg>
+                                <div @click.outside="open = false" x-show="open"
+                                    x-transition:enter="transition ease-out duration-200"
+                                    x-transition:enter-start="opacity-0 translate-y-1"
+                                    x-transition:enter-end="opacity-100 translate-y-0"
+                                    x-transition:leave="transition ease-in duration-150"
+                                    x-transition:leave-start="opacity-100 translate-y-0"
+                                    x-transition:leave-end="opacity-0 translate-y-1"
+                                    class="absolute left-0 top-full mt-2 right-0 bg-white shadow-lg z-50 p-16 space-y-6">
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    </p>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bg-white p-10 xxl:pt-28 flex flex-col justify-between shadow-1 relative cursor-pointer select-none"
+                                x-data="{ open: false }" @click="open = !open">
+                                <div class="flex items-center gap-6 mb-4 xl:mb-8 text-h3 font-medium">
+                                    <img src="assets/images/right.svg" alt="" class="w-24 xxl:w-36 shrink-0">
+                                    <h4>Qualifikationen & Zertifikate</h4>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="mx-auto mt-auto text-red"
+                                    :class="{'rotate-180': open}">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M6 9l6 6l6 -6" />
+                                </svg>
+                                <div @click.outside="open = false" x-show="open"
+                                    x-transition:enter="transition ease-out duration-200"
+                                    x-transition:enter-start="opacity-0 translate-y-1"
+                                    x-transition:enter-end="opacity-100 translate-y-0"
+                                    x-transition:leave="transition ease-in duration-150"
+                                    x-transition:leave-start="opacity-100 translate-y-0"
+                                    x-transition:leave-end="opacity-0 translate-y-1"
+                                    class="absolute left-0 top-full mt-2 right-0 bg-white shadow-lg z-50 p-16 space-y-6">
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    </p>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bg-white p-10 xxl:pt-28 flex flex-col justify-between shadow-1 relative cursor-pointer select-none"
+                                x-data="{ open: false }" @click="open = !open">
+                                <div class="flex items-center gap-6 mb-4 xl:mb-8 text-h3 font-medium">
+                                    <img src="assets/images/right.svg" alt="" class="w-24 xxl:w-36 shrink-0">
+                                    <h4>Transparenz & Projektmanagement</h4>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="mx-auto mt-auto text-red"
+                                    :class="{'rotate-180': open}">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M6 9l6 6l6 -6" />
+                                </svg>
+                                <div @click.outside="open = false" x-show="open"
+                                    x-transition:enter="transition ease-out duration-200"
+                                    x-transition:enter-start="opacity-0 translate-y-1"
+                                    x-transition:enter-end="opacity-100 translate-y-0"
+                                    x-transition:leave="transition ease-in duration-150"
+                                    x-transition:leave-start="opacity-100 translate-y-0"
+                                    x-transition:leave-end="opacity-0 translate-y-1"
+                                    class="absolute left-0 top-full mt-2 right-0 bg-white shadow-lg z-50 p-16 space-y-6">
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    </p>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bg-white p-10 xxl:pt-28 flex flex-col justify-between shadow-1 relative cursor-pointer select-none"
+                                x-data="{ open: false }" @click="open = !open">
+                                <div class="flex items-center gap-6 mb-4 xl:mb-8 text-h3 font-medium">
+                                    <img src="assets/images/right.svg" alt="" class="w-24 xxl:w-36 shrink-0">
+                                    <h4>Qualität & Nachhaltigkeit</h4>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="mx-auto mt-auto text-red"
+                                    :class="{'rotate-180': open}">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M6 9l6 6l6 -6" />
+                                </svg>
+                                <div @click.outside="open = false" x-show="open"
+                                    x-transition:enter="transition ease-out duration-200"
+                                    x-transition:enter-start="opacity-0 translate-y-1"
+                                    x-transition:enter-end="opacity-100 translate-y-0"
+                                    x-transition:leave="transition ease-in duration-150"
+                                    x-transition:leave-start="opacity-100 translate-y-0"
+                                    x-transition:leave-end="opacity-0 translate-y-1"
+                                    class="absolute left-0 top-full mt-2 right-0 bg-white shadow-lg z-50 p-16 space-y-6">
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    </p>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image flex justify-end items-end">
+                        <img src="assets/images/partners.webp" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-0 -z-10">
+                <img src="assets/images/wall-texture.webp" alt="" class="size-full object-cover object-center">
+            </div>
+            <div class="absolute bottom-0 right-0 -z-10">
+                <img src="assets/images/logo-light.svg" alt="">
+            </div>
+            <p class="absolute bottom-20 right-0 max-w-280 text-black font-light bg-white/60 p-10">
+                Karsten Jung & Frank Jung Geschäftsführer
+            </p>
+        </section>
+        <section class="py-spc">
+            <div class="container">
+                <h2 class="title w-fit text-h3 font-medium text-red border-b uppercase mb-8 xl:mb-17">
+                    Referenzen
+                </h2>
+                <h3 class="text-h1 uppercase font-medium mb-14 xl:mb-28">
+                    Erfolgreiche Projekte im Überblick
+                </h3>
+                <div class="grid xsm:grid-cols-2 lg:grid-cols-3 gap-16 xxl:gap-60 mb-26 xl:mb-56">
+                    <a href="referenzen-einzelansicht.html">
+                        <img src="assets/images/Referenzen1.png" alt="Blog image 1" class="w-full">
+                    </a>
+                    <a href="referenzen-einzelansicht.html">
+                        <img src="assets/images/Referenzen2.png" alt="Blog image 2" class="w-full">
+                    </a>
+                    <a href="referenzen-einzelansicht.html">
+                        <img src="assets/images/Referenzen3.png" alt="Blog image 3" class="w-full">
+                    </a>
+                </div>
+                <div class="text-center">
+                    <a href="referenzen.html" class="bg-red text-white py-8 px-16 font-medium text-h3">
+                        Zu unseren Referenzen >
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="pb-spc">
+            <div class="container">
+                <div class="p-20 lg:p-65 bg-gray">
+                    <div class="swiper testimonial_swiper">
+                        <div class="swiper-wrapper mb-20">
+                            <div class="swiper-slide bg-gray">
+                                <div>
+                                    <h2
+                                        class="title w-fit text-h3 font-medium text-red border-b uppercase mb-18 xl:mb-36">
+                                        Kundenstimmen
+                                    </h2>
+                                    <div class="text mb-9 xl:mb-22 font-light">
+                                        <p>
+                                            Von der ersten Beratung bis zur schlüsselfertigen Übergabe unseres
+                                            Einfamilienhauses fühlten wir uns bestens betreut. Das Team von Koch
+                                            Baupartner
+                                            hat unsere Wünsche verstanden und mit großer Sorgfalt umgesetzt. Besonders
+                                            beeindruckt hat uns die transparente Kommunikation, das termingerechte
+                                            Arbeiten
+                                            und die hohe Qualität beim Innenausbau. Wir sind begeistert von unserem
+                                            neuen
+                                            Zuhause und können das Unternehmen uneingeschränkt weiterempfehlen.
+                                        </p>
+                                    </div>
+                                    <p class="text-[15px] font-medium">
+                                        Familie Schmidt, Droshagen
+                                    </p>
+                                    <p class="text-[15px] font-medium uppercase text-[#6B5E52]">
+                                        Hausbau | Einfamilienhaus
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide bg-gray">
+                                <div>
+                                    <h2
+                                        class="title w-fit text-h3 font-medium text-red border-b uppercase mb-18 xl:mb-36">
+                                        Kundenstimmen
+                                    </h2>
+                                    <div class="text mb-9 xl:mb-22 font-light">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minus
+                                            cumque
+                                            suscipit veritatis nulla neque, quia culpa nesciunt esse eos adipisci est.
+                                            Saepe
+                                            ex maxime explicabo ipsa iste eligendi accusamus!
+                                        </p>
+                                    </div>
+                                    <p class="text-[15px] font-medium">
+                                        Familie Schmidt, Droshagen
+                                    </p>
+                                    <p class="text-[15px] font-medium uppercase text-[#6B5E52]">
+                                        Hausbau | Einfamilienhaus
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide bg-gray">
+                                <div>
+                                    <h2
+                                        class="title w-fit text-h3 font-medium text-red border-b uppercase mb-18 xl:mb-36">
+                                        Kundenstimmen
+                                    </h2>
+                                    <div class="text mb-9 xl:mb-22 font-light">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+                                            aspernatur,
+                                            beatae cumque rem voluptatem illo itaque nihil error aut nemo repudiandae
+                                            perferendis neque possimus repellat tempore sed natus expedita facere sint
+                                            nam
+                                            distinctio unde? Maxime doloribus dolorum eum, explicabo quod id soluta
+                                            quaerat
+                                            sint iusto porro voluptas nisi cum suscipit obcaecati omnis molestias,
+                                            distinctio labore sapiente? Provident error rem hic.
+                                        </p>
+                                    </div>
+                                    <p class="text-[15px] font-medium">
+                                        Familie Schmidt, Droshagen
+                                    </p>
+                                    <p class="text-[15px] font-medium uppercase text-[#6B5E52]">
+                                        Hausbau | Einfamilienhaus
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-40 relative z-10">
+            <div class="container">
+                <h2 class="title w-fit text-h3 font-medium text-red border-b uppercase mb-26 xl:mb-52">
+                    Referenzen
+                </h2>
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-16 xxl:gap-60 mb-26 xl:mb-56">
+                    <div class="bg-gray flex flex-col">
+                        <a href="referenzen-einzelansicht.html" class="aspect-[1.5/1]">
+                            <img src="assets/images/blog-1.webp" alt="Mehrfamilienhaus in Drolshagen"
+                                class="size-full object-cover">
+                        </a>
+                        <div class="p-15 grow flex flex-col">
+                            <h3 class="text-h3 from-orange-50 mb-5 xl:mb-11">
+                                Mehrfamilienhaus in Drolshagen - Jetzt Besichtigung vereinbaren
+                            </h3>
+                            <div class="text font-light mb-12 xl:mb-24">
+                                <p>
+                                    Unser Mehrfamilienhaus in Drolshagen kann ab sofort besichtigt werden
+                                </p>
+                            </div>
+                            <a href="referenzen-einzelansicht.html" class="text-red font-medium mt-auto">
+                                Mehr erfahren >>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-gray flex flex-col">
+                        <a href="referenzen-einzelansicht.html" class="aspect-[1.5/1]">
+                            <img src="assets/images/blog-2.webp" alt="Es kann losgehen" class="size-full object-cover">
+                        </a>
+                        <div class="p-15 grow flex flex-col">
+                            <h3 class="text-h3 from-orange-50 mb-5 xl:mb-11">
+                                Es kann losgehen: Spatenstich in Olpe-Stachelau
+                            </h3>
+                            <div class="text font-light mb-12 xl:mb-24">
+                                <p>
+                                    Wir starten it unserem neuen Bauvorhaben in Stachelau. Zukünftig
+                                </p>
+                            </div>
+                            <a href="referenzen-einzelansicht.html" class="text-red font-medium mt-auto">
+                                Mehr erfahren >>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-gray flex flex-col">
+                        <a href="referenzen-einzelansicht.html" class="aspect-[1.5/1]">
+                            <img src="assets/images/blog-3.webp" alt="Rohbau fertiggestellt"
+                                class="size-full object-cover">
+                        </a>
+                        <div class="p-15 grow flex flex-col">
+                            <h3 class="text-h3 from-orange-50 mb-5 xl:mb-11">
+                                Rohbau fertiggestellt - Schlüsselfertige Übergabe im Mai
+                            </h3>
+                            <div class="text font-light mb-12 xl:mb-24">
+                                <p>
+                                    Nächste Woche beginnen wir mit dem Innenausbau des Einfamilienhauses in
+                                </p>
+                            </div>
+                            <a href="referenzen-einzelansicht.html" class="text-red font-medium mt-auto">
+                                Mehr erfahren >>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-0 opacity-30 -z-10">
+                <img src="assets/images/Aktuelles-bg.webp" alt="" class="size-full object-cover">
+            </div>
+        </section>
+    </main>
+    <footer class="bg-red py-40 text-white font-light">
+        <div class="container">
+            <div class="grid md:grid-cols-3 xl:grid-cols-4 gap-20 md:gap-40 lg:gap-60">
+                <div>
+                    <p>Koch Baupartner GmbH</p>
+                    <p>Karsten Jung & Frank Jung <br> In der Trift 42 <br> 57462 Olpe</p>
+                </div>
+                <div class="xl:col-span-2">
+                    <ul>
+                        <li><a href="tel:xxxxxx">Tel: xxxxxx</a></li>
+                        <li><a href="tel:+4915112689566">Mobile: 0151 - 12689566</a></li>
+                        <li><a href="mailto:info@koch-baupartner.de">E-Mail: info@koch-baupartner.de</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <nav class="footer-nav flex flex-wrap gap-y-4 gap-x-10 items-center text-h3">
+                        <a href="impressum.html">Impressum</a>
+                        <span class="text-sm align-middle">■</span>
+                        <a href="datenschutz.html">Datenschutz</a>
+                    </nav>
+
+                    <small class="uppercase">© '25 | MDK Mediadesign ■</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- back to top button -->
+    <button x-data="backToTop()" x-show="visible" x-transition.opacity.duration.200 @click="scrollToTop"
+        class="fixed bottom-20 right-20 bg-red p-10 text-white z-[99999] border" aria-label="Zurück nach oben"
+        title="Zurück nach oben">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-up">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M6 15l6 -6l6 6" />
+        </svg>
+    </button>
+    <!-- back to top button -->
+
+    <script src="assets/js/swiper.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
