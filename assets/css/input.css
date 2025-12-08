@@ -20,11 +20,15 @@
   --color-red: #A5170E;
   --color-gray: #E3DCD5;
 
-  --text-h1: clamp(1.875rem, 1.75rem + 0.625vw, 2.5rem); /* 30 - 40 */
-  --text-h1--line-height: clamp(1.875rem, 1.75rem + 0.625vw, 2.5rem); /* 30 - 40 */
+  --text-h1: clamp(1.875rem, 1.75rem + 0.625vw, 2.5rem);
+  /* 30 - 40 */
+  --text-h1--line-height: clamp(1.875rem, 1.75rem + 0.625vw, 2.5rem);
+  /* 30 - 40 */
 
-  --text-h2: clamp(1.25rem, 1.125rem + 0.625vw, 1.875rem); /* 20-30 px */
-  --text-h2--line-height: clamp(1.25rem, 1.125rem + 0.625vw, 1.875rem); /* 20-30 px */
+  --text-h2: clamp(1.25rem, 1.125rem + 0.625vw, 1.875rem);
+  /* 20-30 px */
+  --text-h2--line-height: clamp(1.25rem, 1.125rem + 0.625vw, 1.875rem);
+  /* 20-30 px */
 
   --text-h3: 20px;
   --text-h3--line-height: 25px;
@@ -124,7 +128,7 @@
 
 @layer {
 
-  html{
+  html {
     @apply scroll-smooth
   }
 
@@ -209,56 +213,62 @@
   ::-webkit-scrollbar-thumb {
     @apply bg-brown
   }
-  
+
   .clip1 {
     clip-path: polygon(0% 0%, 80% 0%, 100% 50%, 80% 100%, 0% 100%);
   }
 
-  .list1 li::before{
+  .list1 li::before {
     @apply content-[''] size-22 bg-[url('../images/right.svg')] bg-no-repeat bg-center inline-block mr-2 align-middle
   }
 
-  input{
+  input {
     @apply accent-red
   }
 
-  .mixed_content{
+  .mixed_content {
     @apply font-light
   }
 
-  .mixed_content p{
+  .mixed_content p {
     @apply mb-8 xl:mb-16
   }
 
-  .mixed_content h1{
+  .mixed_content h1 {
     @apply text-h1 font-medium mb-30
   }
 
-  .mixed_content h2{
+  .mixed_content h2 {
     @apply text-[26px] pt-10
   }
 
-  .mixed_content h3{
+  .mixed_content h3 {
     @apply text-[24px] pt-10
   }
 
-  .mixed_content h4{
+  .mixed_content h4 {
     @apply text-[22px] pt-10
   }
 
-  .mixed_content h5{
+  .mixed_content h5 {
     @apply text-[20px] pt-10
   }
 
-  .mixed_content h6{
+  .mixed_content h6 {
     @apply text-[18px] pt-10
   }
 
-  .mixed_content a{
+  .mixed_content a {
     @apply underline
   }
 
-  .mixed_content ul{
+  .mixed_content ul {
     @apply list-disc pl-21 mb-16
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .parallax {
+    background-attachment: scroll !important;
   }
 }
