@@ -24,7 +24,7 @@
     <script defer src="assets/js/alpine.js"></script>
 </head>
 
-<body x-data="{ isMenuOpen: false }" :class="isMenuOpen ? 'overflow-hidden pr-8' : ''">
+<body x-data="{ isMenuOpen: false }">
     <header class="py-25 min-h-90 xsm:min-h-120 flex items-center z-[99999] bg-white sticky top-0 shadow"
         @keydown.window.escape="isMenuOpen = false">
         <div class="container">
