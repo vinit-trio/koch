@@ -13,7 +13,7 @@
     <script defer src="assets/js/alpine.js"></script>
 </head>
 
-<body x-data="{ isMenuOpen: false }" :class="isMenuOpen ? 'overflow-hidden mr-8' : ''">
+<body x-data="{ ...lightbox(), isMenuOpen: false }">
     <header class="py-25 min-h-90 xsm:min-h-120 flex items-center z-[99999] bg-white sticky top-0 shadow"
         @keydown.window.escape="isMenuOpen = false">
         <div class="container">
@@ -154,7 +154,8 @@
         <section>
             <div class="image bg-brown">
                 <img src="assets/images/referenzen-hero-bg.webp" alt=""
-                    class="aspect-video w-full lg:h-[calc(100vh-120px)] lg:w-2/3 ml-auto object-cover" fetchpriority="high" loading="lazy">
+                    class="aspect-video w-full lg:h-[calc(100vh-120px)] lg:w-2/3 ml-auto object-cover"
+                    fetchpriority="high" loading="lazy">
             </div>
         </section>
         <section class="py-spc bg-gray relative z-10 xxl:mb-40">
@@ -189,16 +190,16 @@
                             class="absolute inset-0 size-full object-cover object-center">
                     </div>
                 </div>
-                <div class="grid sm:grid-cols-3 gap-15">
-                    <div class="img aspect-video sm:aspect-[1.48/1] relative">
+                <div class="grid sm:grid-cols-3 gap-15" x-ref="gallery">
+                    <div class="cursor-pointer img aspect-video sm:aspect-[1.48/1] relative" @click="open(0)">
                         <img src="assets/images/blog-1.webp" class="absolute inset-0 size-full object-cover"
                             alt="Blog iamge">
                     </div>
-                    <div class="img aspect-video sm:aspect-[1.48/1] relative">
+                    <div class="cursor-pointer img aspect-video sm:aspect-[1.48/1] relative" @click="open(1)">
                         <img src="assets/images/blog-2.webp" class="absolute inset-0 size-full object-cover"
                             alt="Blog iamge">
                     </div>
-                    <div class="img aspect-video sm:aspect-[1.48/1] relative">
+                    <div class="cursor-pointer img aspect-video sm:aspect-[1.48/1] relative" @click="open(2)">
                         <img src="assets/images/blog-3.webp" class="absolute inset-0 size-full object-cover"
                             alt="Blog iamge">
                     </div>
@@ -236,6 +237,42 @@
         </div>
     </footer>
 
+    <div x-show="current !== null" x-transition
+        class="fixed inset-0 bg-black/80 flex items-center justify-center z-[999999]">
+
+        <img :src="images[current]" @click="toggleZoom()"
+            :class="zoomed ? 'scale-150 cursor-zoom-out' : 'scale-100 cursor-zoom-in'"
+            class="max-w-[90%] max-h-[85%] rounded shadow-lg">
+
+        <button @click="prev"
+            class="absolute top-0 bottom-0 left-0 p-30 text-white text-4xl flex justify-start items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M15 6l-6 6l6 6" />
+            </svg>
+        </button>
+        <button @click="next"
+            class="absolute top-0 bottom-0 right-0 p-30 text-white text-4xl flex justify-end items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 6l6 6l-6 6" />
+            </svg>
+        </button>
+        <button @click="close" class="absolute p-24 top-0 right-0 text-white text-3xl">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M18 6l-12 12" />
+                <path d="M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+
     <!-- back to top button -->
     <button x-data="backToTop()" x-show="visible" x-transition.opacity.duration.200 @click="scrollToTop"
         class="fixed bottom-20 right-20 bg-red p-10 text-white z-[99999] border" aria-label="Zurück nach oben"
@@ -251,6 +288,7 @@
 
     <script src="assets/js/swiper.js"></script>
     <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>

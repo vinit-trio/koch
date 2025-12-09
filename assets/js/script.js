@@ -52,3 +52,41 @@ if (document.getElementById("loadMapBtn")) {
         `;
     });
 }
+
+document.addEventListener('alpine:init', () => {
+    Alpine.data('lightbox', () => ({
+        images: [],
+        current: null,
+        zoomed: false,
+
+        init() {
+            this.images = [...this.$refs.gallery.querySelectorAll('img')]
+                .map(img => img.src);
+        },
+
+        open(i) {
+            this.current = i;
+            document.body.classList.add('overflow-hidden');
+            this.zoomed = false;
+        },
+
+        close() {
+            this.current = null;
+            document.body.classList.remove('overflow-hidden');
+        },
+
+        next() {
+            this.current = (this.current + 1) % this.images.length;
+            this.zoomed = false;
+        },
+
+        prev() {
+            this.current = (this.current - 1 + this.images.length) % this.images.length;
+            this.zoomed = false;
+        },
+
+        toggleZoom() {
+            this.zoomed = !this.zoomed;
+        }
+    }))
+})
