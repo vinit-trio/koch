@@ -158,18 +158,6 @@
     scrollbar-width: none;
   }
 
-  .link {
-    @apply flex gap-5 items-center
-  }
-
-  .link.active {
-    @apply font-medium
-  }
-
-  .link.active::before {
-    @apply content-['■'] text-sm align-middle text-red
-  }
-
   .text {
     @apply space-y-8 xl:space-y-16
   }
@@ -219,7 +207,8 @@
   }
 
   .list1 li::before {
-    @apply content-[''] size-22 bg-[url('../images/right.svg')] bg-no-repeat bg-center inline-block mr-2 align-middle
+    @apply content-[''] size-22 bg-no-repeat bg-center inline-block mr-2 align-middle;
+    background-image: var(--list-image);
   }
 
   input {
@@ -265,10 +254,102 @@
   .mixed_content ul {
     @apply list-disc pl-21 mb-16
   }
-  
+
   @supports (-webkit-touch-callout: none) {
     .parallax {
       @apply bg-scroll
     }
+  }
+
+  .mega_menu>.menu-item {
+    @apply flex flex-col gap-10
+  }
+
+  .mega_menu>.menu-item>a {
+    @apply text-[#BC2D33] font-medium uppercase
+  }
+
+  .mega_menu .sub-menu {
+    @apply space-y-10
+  }
+
+  .mega_menu .sub-menu .menu-item {
+    @apply flex gap-5 items-center
+  }
+
+  .mega_menu .sub-menu .menu-item.active {
+    @apply font-medium
+  }
+
+  .mega_menu .sub-menu .menu-item.active::before {
+    @apply content-['■'] text-sm align-middle text-red
+  }
+
+  .footer-nav a::after {
+    @apply content-['■'] text-sm align-middle ml-10 inline-block
+  }
+
+  .footer-nav a:last-child:after {
+    @apply content-['']
+  }
+
+  .wpcf7-form :is(input, textarea) {
+    @apply bg-[#EBECEC] p-6.5 w-full
+  }
+
+  .wpcf7-form-control-wrap {
+    @apply ml-auto sm:w-3/4 md:w-4/5 shrink-0
+  }
+
+  .wpcf7-form-control-wrap:has(textarea) {
+    @apply w-full
+  }
+
+  .wpcf7-form {
+    @apply xxl:text-[22px]
+  }
+
+  .wpcf7-form label {
+    @apply flex flex-col sm:flex-row xl:gap-10 sm:items-center mb-7 xl:mb-15
+  }
+
+  .wpcf7-form label:has(textarea) {
+    @apply flex flex-col xl:gap-10 sm:items-start
+  }
+
+  .wpcf7-form .wpcf7-submit {
+    @apply bg-red text-white py-8 px-16 font-medium text-h3 hover:bg-brown w-fit mx-auto uppercase
+  }
+
+  .wpcf7-form p:has(.wpcf7-submit) {
+    @apply text-center
+  }
+
+  .wpcf7-form br {
+    @apply hidden
+  }
+
+  .wpcf7-form [type="checkbox"] {
+    @apply w-auto
+  }
+
+  .wpcf7-form label:has([type="checkbox"]) {
+    @apply items-start
+  }
+
+  .wpcf7-form .wpcf7-list-item-label {
+    @apply inline-block text-[12px]
+  }
+
+  .wpcf7-form .required-field {
+    @apply text-end text-[12px]
+  }
+
+  .wpcf7-form .wpcf7-form-control-wrap:has([type="checkbox"]) {
+    @apply w-full
+  }
+
+  .wpcf7-form .wpcf7-list-item {
+    @apply !ml-0
   }
 }

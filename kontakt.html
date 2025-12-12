@@ -167,7 +167,8 @@
                         target="_blank">Datenschutzerklärungen</a> von Google.
                 </p>
                 <div class="absolute inset-0 -z-10">
-                    <img src="assets/images/google_map.webp" alt="" class="size-full object-cover" fetchpriority="high" loading="lazy">
+                    <img src="assets/images/google_map.webp" alt="" class="size-full object-cover" fetchpriority="high"
+                        loading="lazy">
                 </div>
             </div>
         </section>
@@ -196,40 +197,58 @@
                         <h2 class="text-h2 uppercase mb-20 xl:mb-42">
                             Ihre Nachricht an Koch Baupartner
                         </h2>
-                        <form class="flex flex-col gap-7 xl:gap-15 xxl:text-[22px]">
-                            <div class="flex flex-col sm:flex-row xl:gap-10 sm:items-center">
-                                <label class="sm:w-1/4 md:w-1/5 shrink-0" for="vorname">Vorname*:</label>
-                                <input type="text" name="vorname" id="vorname" required class="grow bg-[#EBECEC] p-6.5">
+                        <form action="/kontakt/#wpcf7-f200-o1" method="post" class="wpcf7-form init"
+                            aria-label="Contact form" novalidate="novalidate" data-status="init">
+                            <fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7"
+                                    value="200"><input type="hidden" name="_wpcf7_version" value="6.1.4"><input
+                                    type="hidden" name="_wpcf7_locale" value="en_US"><input type="hidden"
+                                    name="_wpcf7_unit_tag" value="wpcf7-f200-o1"><input type="hidden"
+                                    name="_wpcf7_container_post" value="0"><input type="hidden"
+                                    name="_wpcf7_posted_data_hash" value="">
+                            </fieldset>
+                            <p><label> Vorname*<span class="wpcf7-form-control-wrap" data-name="your-name"><input
+                                            size="40" maxlength="400"
+                                            class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                            autocomplete="name" aria-required="true" aria-invalid="false" value=""
+                                            type="text" name="your-name"></span> </label><br>
+                                <label>Nachname*<span class="wpcf7-form-control-wrap" data-name="text-988"><input
+                                            size="40" maxlength="400" class="wpcf7-form-control wpcf7-text"
+                                            aria-invalid="false" value="" type="text"
+                                            name="text-988"></span></label><br>
+                                <label> Email*<span class="wpcf7-form-control-wrap" data-name="your-email"><input
+                                            size="40" maxlength="400"
+                                            class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
+                                            autocomplete="email" aria-required="true" aria-invalid="false" value=""
+                                            type="email" name="your-email"></span> </label><br>
+                                <label> Telefon<span class="wpcf7-form-control-wrap" data-name="tel-864"><input
+                                            size="40" maxlength="400"
+                                            class="wpcf7-form-control wpcf7-tel wpcf7-text wpcf7-validates-as-tel"
+                                            aria-invalid="false" value="" type="tel" name="tel-864"></span> </label><br>
+                                <label> Ihre Nachricht*:<span class="wpcf7-form-control-wrap"
+                                        data-name="your-message"><textarea cols="40" rows="10" maxlength="2000"
+                                            class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"
+                                            name="your-message"></textarea></span> </label><br>
+                                <span class="wpcf7-form-control-wrap" data-name="acceptance-724"><span
+                                        class="wpcf7-form-control wpcf7-acceptance optional"><span
+                                            class="wpcf7-list-item"><label><input type="checkbox" name="acceptance-724"
+                                                    value="1" aria-invalid="false"><span
+                                                    class="wpcf7-list-item-label">Ja, ich habe die Datenschutzerklärung
+                                                    zur Kenntnis genommen und bin damit einverstanden, dass die von mir
+                                                    angegebenen Daten elektronisch erhoben und gespeichert werden. Meine
+                                                    Daten werden dabei nur streng zweckgebunden zur Bearbeitung und
+                                                    Beantwortung meiner Anfrage benutzt und nicht an Dritte
+                                                    weitergegeben. Mit dem Absenden des Kontaktformulars erkläre ich
+                                                    mich mit der Verarbeitung
+                                                    einverstanden.</span></label></span></span></span>
+                            </p>
+                            <div class="required-field">
+                                <p>* Pflichtfelder
+                                </p>
                             </div>
-                            <div class="flex flex-col sm:flex-row xl:gap-10 sm:items-center">
-                                <label class="sm:w-1/4 md:w-1/5 shrink-0" for="nachname">Nachname*:</label>
-                                <input type="text" name="nachname" id="nachname" required
-                                    class="grow bg-[#EBECEC] p-6.5">
-                            </div>
-                            <div class="flex flex-col sm:flex-row xl:gap-10 sm:items-center">
-                                <label class="sm:w-1/4 md:w-1/5 shrink-0" for="email">Email*:</label>
-                                <input type="email" name="email" id="email" required class="grow bg-[#EBECEC] p-6.5">
-                            </div>
-                            <div class="flex flex-col sm:flex-row xl:gap-10 sm:items-center">
-                                <label class="sm:w-1/4 md:w-1/5 shrink-0" for="tel">Telefon:</label>
-                                <input type="tel" name="tel" id="tel" class="grow bg-[#EBECEC] p-6.5">
-                            </div>
-                            <div class="flex flex-col xl:gap-10">
-                                <label for="ihreNachricht">Ihre Nachricht*:</label>
-                                <textarea name="ihreNachricht" id="ihreNachricht" required
-                                    class="grow bg-[#EBECEC] p-6.5" rows="7"></textarea>
-                            </div>
-                            <label for="policy" class="text-[12px]">
-                                <input type="checkbox" name="policy" id="policy">
-                                Ja, ich habe die Datenschutzerklärung zur Kenntnis genommen und bin damit einverstanden,
-                                dass die von mir angegebenen Daten elektronisch erhoben und gespeichert werden. Meine
-                                Daten werden dabei nur streng zweckgebunden zur Bearbeitung und Beantwortung meiner
-                                Anfrage benutzt und nicht an Dritte weitergegeben. Mit dem Absenden des Kontaktformulars
-                                erkläre ich mich mit der Verarbeitung einverstanden.
-                                <span class="text-end !block">* Pflichtfelder</span>
-                            </label>
-                            <button type="submit"
-                                class="bg-red text-white py-8 px-16 font-medium text-h3 hover:bg-brown w-fit mx-auto uppercase">Senden</button>
+                            <p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit"
+                                    value="Submit"><span class="wpcf7-spinner"></span>
+                            </p>
+                            <div class="wpcf7-response-output" aria-hidden="true"></div>
                         </form>
                     </div>
                 </div>
@@ -251,7 +270,8 @@
                                 <h4 class="text-h3 font-medium mb-6 xl:mb-12">
                                     Karsten Jung
                                 </h4>
-                                <ul class="list1 mb-11 xl:mb-22 flex flex-col gap-6">
+                                <ul class="list1 mb-11 xl:mb-22 flex flex-col gap-6"
+                                    style="--list-image: url(../images/right.svg);">
                                     <li>
                                         Ankauf von Grundstücken
                                     </li>
@@ -276,7 +296,8 @@
                                 <h4 class="text-h3 font-medium mb-6 xl:mb-12">
                                     Frank Jung
                                 </h4>
-                                <ul class="list1 mb-11 xl:mb-22 flex flex-col gap-6">
+                                <ul class="list1 mb-11 xl:mb-22 flex flex-col gap-6"
+                                    style="--list-image: url(../images/right.svg);">
                                     <li>
                                         Administrative Arbeiten
                                     </li>
@@ -317,7 +338,6 @@
                 <div>
                     <nav class="footer-nav flex flex-wrap gap-y-4 gap-x-10 items-center text-h3">
                         <a href="#">Impressum</a>
-                        <span class="text-sm align-middle">■</span>
                         <a href="#">Datenschutz</a>
                     </nav>
 
