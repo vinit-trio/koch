@@ -190,7 +190,7 @@
                             class="absolute inset-0 size-full object-cover object-center">
                     </div>
                 </div>
-                <div class="grid sm:grid-cols-3 gap-15" x-ref="gallery">
+                <div class="gallery grid sm:grid-cols-3 gap-15 mb-16 xl:mb-32" x-ref="gallery">
                     <div class="cursor-pointer img aspect-video sm:aspect-[1.48/1] relative" @click="open(0)">
                         <img src="assets/images/blog-1.webp" class="absolute inset-0 size-full object-cover"
                             alt="Blog iamge">
@@ -204,6 +204,9 @@
                             alt="Blog iamge">
                     </div>
                 </div>
+                <a href="/referenzen.html" class="bg-red text-white py-8 px-16 font-medium text-h3 hover:bg-brown !block w-fit mx-auto">
+                    Zurück zur Übersicht
+                </a>
             </div>
             <div class="absolute inset-0 -z-10">
                 <img src="assets/images/wall-texture.webp" alt="" class="size-full object-cover">
@@ -244,28 +247,25 @@
             :class="zoomed ? 'scale-150 cursor-zoom-out' : 'scale-100 cursor-zoom-in'"
             class="max-w-[90%] max-h-[85%] rounded shadow-lg">
 
-        <button @click="prev"
-            class="absolute top-0 bottom-0 left-0 p-30 text-white flex justify-start items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        <button @click="prev" class="absolute top-0 bottom-0 left-0 p-30 text-white flex justify-start items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="bg-black/50 p-10 icon-tabler-chevron-left">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M15 6l-6 6l6 6" />
             </svg>
         </button>
-        <button @click="next"
-            class="absolute top-0 bottom-0 right-0 p-30 text-white flex justify-end items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        <button @click="next" class="absolute top-0 bottom-0 right-0 p-30 text-white flex justify-end items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="bg-black/50 p-10 icon-tabler-chevron-right">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M9 6l6 6l-6 6" />
             </svg>
         </button>
         <button @click="close" class="absolute p-24 top-0 right-0 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="bg-black/50 p-10 icon-tabler-x">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bg-black/50 p-10 icon-tabler-x">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M18 6l-12 12" />
                 <path d="M6 6l12 12" />

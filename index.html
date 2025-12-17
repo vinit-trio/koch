@@ -25,6 +25,13 @@
 </head>
 
 <body x-data="{ isMenuOpen: false }">
+
+    <!-- Loader -->
+    <div x-data="{ show: true }" x-init="setTimeout(() => show = false)" x-show="show"
+        x-transition.opacity.duration.500ms class="fixed inset-0 bg-white z-9999999"></div>
+    <!-- Loader -->
+
+    <!-- Header -->
     <header class="py-25 min-h-90 xsm:min-h-120 flex items-center z-[99999] bg-white sticky top-0 shadow"
         @keydown.window.escape="isMenuOpen = false">
         <div class="container">
@@ -55,206 +62,123 @@
             x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
             x-transition:leave="transition-opacity ease-in-out duration-300" x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0" class="fixed left-0 top-90 xsm:top-120 size-full shadow-lg z-[9999] py-6"
-            @click.outside="isMenuOpen = false" style="display: none;">
+            @click="isMenuOpen = false" style="display: none;">
             <div
-                class="overflow-y-auto scrollbar_none max-h-[calc(100dvh-90px)] xsm:max-h-[calc(100dvh-120px)] container font-light py-40 xl:py-115 text-h2 text-[#2E2E2E]">
-                <div class="mega_menu grid sm:grid-cols-2 lg:grid-cols-3 xl:flex gap-20 xl:gap-60 flex-wrap">
-                    <div class="menu-item">
-                            <a href="index.html">
-                                Startseite
-                            </a>
-                    </div>
-                    <div class="menu-item">
-                        <div class="title text-[#BC2D33] font-medium uppercase">
-                            <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html">
-                                Unternehmen
-                            </a>
-                        </div>
-                        <ul class="space-y-10">
-                            <li>
-                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#unternehmensgeschichte"
-                                    class="link active">
-                                    Unternehmensgeschichte
-                                </a>
+                class="overflow-y-auto scrollbar_none max-h-[calc(100dvh-90px)] xsm:max-h-[calc(100dvh-120px)] container font-light py-40 xl:py-115 text-24 text-[#2E2E2E]">
+                <ul id="menu-header-menu"
+                    class="mega_menu grid sm:grid-cols-2 lg:grid-cols-3 xl:flex gap-20 xl:gap-55 flex-wrap">
+                    <li id="menu-item-55"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-55"><a
+                            href="index.html">Startseite</a></li>
+                    <li id="menu-item-54"
+                        class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-40 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-54">
+                        <a href="unternehmen.html" aria-current="page">Unternehmen</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-65"
+                                class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-65">
+                                <a href="unternehmen.html#unternehmensgeschichte"
+                                    aria-current="page">Unternehmensgeschichte</a>
                             </li>
-                            <li>
-                                <a @click="isMenuOpen = !isMenuOpen" href="#" class="link">
-                                    Team / Qualifikationen
-                                </a>
+                            <li id="menu-item-66"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-66"><a
+                                    href="#">Team / Qualifikationen</a></li>
+                            <li id="menu-item-67"
+                                class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-67">
+                                <a href="unternehmen.html#werte" aria-current="page">Werte</a>
                             </li>
-                            <li>
-                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#werte" class="link">
-                                    Werte
-                                </a>
-                            </li>
-                            <li>
-                                <a @click="isMenuOpen = !isMenuOpen" href="unternehmen.html#partner" class="link">
-                                    Partner
-                                </a>
+                            <li id="menu-item-68"
+                                class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-68">
+                                <a href="unternehmen.html#partner" aria-current="page">Partner</a>
                             </li>
                         </ul>
-                    </div>
-                    <div class="menu-item">
-                        <div class="title text-[#BC2D33] font-medium uppercase">
-                            <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html">
-                                Leistungen
-                            </a>
-                        </div>
-                        <ul class="space-y-10">
-                            <li>
-                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#was-wir-bauen" class="link">
-                                    Was wir bauen
-                                </a>
+                    </li>
+                    <li id="menu-item-53"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-53">
+                        <a href="leistungen.html">&nbsp;Leistungen</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-60"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-60"><a
+                                    href="leistungen.html#was-wir-bauen">Was wir bauen</a>
                             </li>
-                            <li>
-                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#wie-wir-bauen" class="link">
-                                    Wie wir bauen
-                                </a>
+                            <li id="menu-item-61"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61"><a
+                                    href="leistungen.html#wie-wir-bauen">Wie wir bauen</a>
                             </li>
-                            <li>
-                                <a @click="isMenuOpen = !isMenuOpen" href="leistungen.html#weitere-leistungen"
-                                    class="link">
-                                    Weitere Leistungen
-                                </a>
+                            <li id="menu-item-62"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-62"><a
+                                    href="leistungen.html#weitere-leistungen">Weitere
+                                    Leistungen</a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52">
+                        <a href="referenzen.html">&nbsp;Referenzen</a>
+                    </li>
+                    <li id="menu-item-56"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-56">
+                        <a href="kontakt.html">Kontakt</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-63"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-63"><a
+                                    href="kontakt.html#kontaktformular">Kontaktformular</a>
+                            </li>
+                            <li id="menu-item-64"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-64"><a
+                                    href="kontakt.html#ansprechpartner">Ansprechpartner</a>
                             </li>
                         </ul>
-                    </div>
-                    <div class="menu-item">
-                        <div class="title text-[#BC2D33] font-medium uppercase">
-                            <a @click="isMenuOpen = !isMenuOpen" href="referenzen.html">
-                                Referenzen
-                            </a>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="title text-[#BC2D33] font-medium uppercase">
-                            <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html">
-                                Kontakt
-                            </a>
-                        </div>
-                        <ul class="space-y-10">
-                            <li>
-                                <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html#kontaktformular" class="link">
-                                    Kontaktformular
-                                </a>
-                            </li>
-                            <li>
-                                <a @click="isMenuOpen = !isMenuOpen" href="kontakt.html#ansprechpartner" class="link">
-                                    Ansprechpartner
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="menu-item">
-                        <div class="title text-[#BC2D33] font-medium uppercase">
-                            <a @click="isMenuOpen = !isMenuOpen" href="#">
-                                Aktuelles
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                    </li>
+                    <li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51">
+                        <a href="index.html">&nbsp;Aktuelles</a>
+                    </li>
+                </ul>
             </div>
             <div class="absolute inset-0 -z-50">
                 <img src="assets/images/menu-bg.png" alt="" class="size-full object-cover object-center">
             </div>
         </div>
     </header>
+    <!-- Header -->
+
     <main>
-        <section class="relative z-10">
-            <div class="swiper hero_swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide bg-white">
-                        <div class="min-h-[calc(100dvh-90px)] xsm:min-h-[calc(100dvh-120px)] flex items-end">
-                            <div class="p-10 pb-50 sm:p-30 sm:pb-60 xl:py-150 xl:pl-0 w-full">
-                                <div
-                                    class="bg-red/90 xl:w-[51%] text-white p-20 xsm:p-30 xl:pl-[calc((100%-1336px)/2)]">
-                                    <div class="xl:pl-16">
-                                        <h1 class="text-h1 uppercase font-medium mb-10">
-                                            Koch Baupartner - <br>
-                                            Wo Qualität ein Zuhause findet
-                                        </h1>
-                                        <div class="text mb-8 xl:mb-15 text-h3">
-                                            <p>
-                                                Mit innovativen Lösungen, regionaler Verbundenheit und handwerklicher
-                                                Präzision
-                                                gestalten
-                                                wir Bauprojekte, die Bestand haben.
-                                            </p>
-                                        </div>
-                                        <a href="unternehmen.html" class="animated_line uppercase text-h3 font-medium">
-                                            Unternehmen >>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="absolute inset-0 -z-10">
-                                    <img src="assets/images/hero-bg.webp" alt=""
-                                        class="size-full object-cover object-center" fetchpriority="high"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                        </div>
+        <section class="bg-red relative z-1 sm:min-h-[calc(100dvh-90px)] flex flex-col justify-end sm:pb-150 sm:pt-300">
+            <div class="container 4xl:max-w-full 4xl:!pl-0">
+                <div class="bg-red text-white py-16 xsm:py-40 sm:p-30 xl:max-w-[72%] 4xl:!pl-[calc((100%-1368px)/2)]">
+                    <h1 class="text-h1 uppercase font-medium mb-10">
+                        Immer in Bewegung - auf und neben der Baustelle. Aktuelles aus unserem Unternehmen.
+                    </h1>
+                    <div class="text mb-8 xl:mb-15 text-h3">
+                        <p>
+                            Mit innovativen Lösungen, regionaler Verbundenheit und handwerklicher Präzision
+                            gestalten
+                            wir Bauprojekte, die Bestand haben.
+                        </p>
                     </div>
-                    <div class="swiper-slide bg-white">
-                        <div class="min-h-[calc(100dvh-90px)] xsm:min-h-[calc(100dvh-120px)] flex items-end">
-                            <div class="p-10 pb-50 sm:p-30 sm:pb-60 xl:py-150 xl:pl-0 w-full">
-                                <div
-                                    class="bg-red/90 xl:w-[51%] text-white p-20 xsm:p-30 xl:pl-[calc((100%-1336px)/2)]">
-                                    <div class="xl:pl-16">
-                                        <h1 class="text-h1 uppercase font-medium mb-10">
-                                            Koch Baupartner - <br>
-                                            Wo Qualität ein Zuhause findet
-                                        </h1>
-                                        <div class="text mb-8 xl:mb-15 text-h3">
-                                            <p>
-                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
-                                                natus?
-                                            </p>
-                                        </div>
-                                        <a href="unternehmen.html" class="animated_line uppercase text-h3 font-medium">
-                                            Unternehmen >>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="absolute inset-0 -z-10">
-                                    <img src="assets/images/hero-bg.webp" alt=""
-                                        class="size-full object-cover object-center" fetchpriority="high"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide bg-white">
-                        <div class="min-h-[calc(100dvh-90px)] xsm:min-h-[calc(100dvh-120px)] flex items-end">
-                            <div class="p-10 pb-50 sm:p-30 sm:pb-60 xl:py-150 xl:pl-0 w-full">
-                                <div
-                                    class="bg-red/90 xl:w-[51%] text-white p-20 xsm:p-30 xl:pl-[calc((100%-1336px)/2)]">
-                                    <div class="xl:pl-16">
-                                        <h1 class="text-h1 uppercase font-medium mb-10">
-                                            Koch Baupartner - <br>
-                                            Wo Qualität ein Zuhause findet
-                                        </h1>
-                                        <div class="text mb-8 xl:mb-15 text-h3">
-                                            <p>
-                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur ex
-                                                vero asperiores magni tempore rem nam earum pariatur aut sapiente ea,
-                                                est sit molestias reiciendis facilis corporis, quos dolor error.
-                                            </p>
-                                        </div>
-                                        <a href="unternehmen.html" class="animated_line uppercase text-h3 font-medium">
-                                            Unternehmen >>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="absolute inset-0 -z-10">
-                                    <img src="assets/images/hero-bg.webp" alt=""
-                                        class="size-full object-cover object-center" fetchpriority="high"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="unternehmen.html" class="animated_line uppercase text-h3 font-medium">
+                        Unternehmen >>
+                    </a>
                 </div>
-                <div class="swiper-pagination"></div>
+            </div>
+            <div class="w-full -order-1 sm:absolute -z-1 inset-0 not-sm:aspect-video">
+                <div class="swiper hero_swiper size-full">
+                    <div class="swiper-wrapper size-full">
+                        <div class="swiper-slide bg-white size-full">
+                            <div class="image size-full">
+                                <img src="assets/images/ref-hero-bg.webp" alt="" class="size-full object-cover">
+                            </div>
+                        </div>
+                        <div class="swiper-slide bg-white">
+                            <div class="image size-full">
+                                <img src="assets/images/Aktuelles-bg.webp" alt="" class="size-full object-cover">
+                            </div>
+                        </div>
+                        <div class="swiper-slide bg-white">
+                            <div class="image size-full">
+                                <img src="assets/images/hero-bg.webp" alt="" class="size-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
         </section>
         <section class="py-spc">
@@ -282,10 +206,10 @@
                         </div>
                         <div class="grid xl:grid-cols-2 mb-18 xl:mb-36 gap-16 xl:gap-25">
                             <div>
-                                <h4 class="flex items-center gap-6 mb-4 xl:mb-8">
+                                <a href="referenzen.html" class="!flex items-center gap-6 mb-4 xl:mb-8">
                                     <img src="assets/images/right.svg" alt="">
                                     <span>Referenzen</span>
-                                </h4>
+                                </a>
                                 <div class="text font-light">
                                     <p>
                                         Qualität und Zuverlässigkeit stehen bei uns an erster Stelle - Erfahrung, die
@@ -294,10 +218,10 @@
                                 </div>
                             </div>
                             <div>
-                                <h4 class="flex items-center gap-6 mb-4 xl:mb-8">
+                                <a href="kontakt.html#ansprechpartner" class="!flex items-center gap-6 mb-4 xl:mb-8">
                                     <img src="assets/images/right.svg" alt="">
                                     <span>Persönliche Ansprechpartner</span>
-                                </h4>
+                                </a>
                                 <div class="text font-light">
                                     <p>
                                         Als regionales Bauunternehmen setzen wir auf persönliche Betreuung und
@@ -462,7 +386,7 @@
             <div class="absolute bottom-0 right-0 -z-10">
                 <img src="assets/images/logo-light.svg" alt="">
             </div>
-            <p class="absolute bottom-20 right-0 max-w-280 text-black font-light bg-white/60 p-10">
+            <p class="absolute bottom-20 right-0 max-w-280 text-black font-light not-lg:bg-white/60 p-10">
                 Karsten Jung & Frank Jung Geschäftsführer
             </p>
         </section>
@@ -649,6 +573,8 @@
             </div>
         </section>
     </main>
+
+    <!-- Footer -->
     <footer class="bg-red py-40 text-white font-light">
         <div class="container">
             <div class="grid md:grid-cols-3 xl:grid-cols-4 gap-20 md:gap-40 lg:gap-60">
@@ -664,21 +590,26 @@
                     </ul>
                 </div>
                 <div>
-                    <nav class="footer-nav flex flex-wrap gap-y-4 gap-x-10 items-center text-h3">
-                        <a href="impressum.html">Impressum</a>
-                        <span class="text-sm align-middle">■</span>
-                        <a href="datenschutz.html">Datenschutz</a>
-                    </nav>
+                    <ul id="menu-footer-menu" class="footer-nav flex flex-wrap gap-y-4 gap-x-10 items-center text-h3">
+                        <li id="menu-item-78"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78"><a
+                                href="impressu.html">Impressum</a></li>
+                        <li id="menu-item-77"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-77">
+                            <a rel="privacy-policy" href="datenschut.html">Datenschutz</a>
+                        </li>
+                    </ul>
 
                     <small class="uppercase">© '25 | MDK Mediadesign ■</small>
                 </div>
             </div>
         </div>
     </footer>
+    <!-- Footer -->
 
     <!-- back to top button -->
     <button x-data="backToTop()" x-show="visible" x-transition.opacity.duration.200 @click="scrollToTop"
-        class="fixed bottom-20 right-20 bg-red p-10 text-white z-[99999] border" aria-label="Zurück nach oben"
+        class="fixed bottom-20 right-100 bg-red p-10 text-white z-[99999] border" aria-label="Zurück nach oben"
         title="Zurück nach oben">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

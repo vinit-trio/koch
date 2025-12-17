@@ -1,3 +1,7 @@
+// ------------------------------------------------------------------
+// Hero swiper
+// ------------------------------------------------------------------
+
 if (document.querySelector('.hero_swiper')) {
     var swiper = new Swiper(".hero_swiper", {
         effect: "fade",
@@ -12,6 +16,10 @@ if (document.querySelector('.hero_swiper')) {
     });
 }
 
+// ------------------------------------------------------------------
+// Testimonial swiper
+// ------------------------------------------------------------------
+
 if (document.querySelector('.testimonial_swiper')) {
     var swiper = new Swiper(".testimonial_swiper", {
         effect: "fade",
@@ -25,6 +33,10 @@ if (document.querySelector('.testimonial_swiper')) {
         },
     });
 }
+
+// ------------------------------------------------------------------
+// Back to top button
+// ------------------------------------------------------------------
 
 function backToTop() {
     return {
@@ -45,48 +57,94 @@ function backToTop() {
     };
 }
 
-if (document.getElementById("loadMapBtn")) {
-    document.getElementById("loadMapBtn").addEventListener("click", function () {
-        document.getElementById("google_map").innerHTML = `
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.2480362618803!2d7.852373276857274!3d51.04850774412271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47beac8c5a07c74d%3A0xc94d8a01bf807361!2sKoch%20Immobilien%20GmbH!5e0!3m2!1sen!2sin!4v1765172976077!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        `;
-    });
-}
+// ------------------------------------------------------------------
+// Lightbox image gallery
+// ------------------------------------------------------------------
 
 document.addEventListener('alpine:init', () => {
-    Alpine.data('lightbox', () => ({
-        images: [],
-        current: null,
-        zoomed: false,
+    try {
+        Alpine.data('lightbox', () => ({
+            images: [],
+            current: null,
+            zoomed: false,
 
-        init() {
-            this.images = [...this.$refs.gallery.querySelectorAll('img')]
-                .map(img => img.src);
-        },
+            init() {
+                if (!this.$refs.gallery) {
+                    console.log('Lightbox: gallery ref not found');
+                    return;
+                }
 
-        open(i) {
-            this.current = i;
-            document.body.classList.add('overflow-hidden');
-            this.zoomed = false;
-        },
+                this.images = [...this.$refs.gallery.querySelectorAll('img')]
+                    .map(img => img.src)
+                    .filter(Boolean);
 
-        close() {
-            this.current = null;
-            document.body.classList.remove('overflow-hidden');
-        },
+                if (!this.images.length) {
+                    console.log('Lightbox: no images found');
+                }
+            },
 
-        next() {
-            this.current = (this.current + 1) % this.images.length;
-            this.zoomed = false;
-        },
+            open(i = 0) {
+                if (!this.images.length) return;
 
-        prev() {
-            this.current = (this.current - 1 + this.images.length) % this.images.length;
-            this.zoomed = false;
-        },
+                this.current = i;
+                this.zoomed = false;
+                document.body.classList.add('overflow-hidden');
+            },
 
-        toggleZoom() {
-            this.zoomed = !this.zoomed;
-        }
-    }))
-})
+            close() {
+                this.current = null;
+                this.zoomed = false;
+                document.body.classList.remove('overflow-hidden');
+            },
+
+            next() {
+                if (this.current === null || !this.images.length) return;
+
+                this.current = (this.current + 1) % this.images.length;
+                this.zoomed = false;
+            },
+
+            prev() {
+                if (this.current === null || !this.images.length) return;
+
+                this.current =
+                    (this.current - 1 + this.images.length) % this.images.length;
+                this.zoomed = false;
+            },
+
+            toggleZoom() {
+                if (this.current === null) return;
+                this.zoomed = !this.zoomed;
+            }
+        }));
+    } catch (e) {
+        console.log('Alpine Lightbox not found in this page', e);
+    }
+});
+
+// ------------------------------------------------------------------
+// Auto link activation
+// ------------------------------------------------------------------
+
+const sections = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('a[href*="#"]');
+
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                links.forEach(link => {
+                    link.classList.toggle(
+                        'active',
+                        link.getAttribute('href').endsWith(`#${entry.target.id}`)
+                    );
+                });
+            }
+        });
+    },
+    {
+        threshold: 0.6
+    }
+);
+
+sections.forEach(section => observer.observe(section));

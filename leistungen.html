@@ -151,29 +151,27 @@
         </div>
     </header>
     <main>
-        <section class="relative z-10">
-            <div class="min-h-[calc(100dvh-90px)] xsm:min-h-[calc(100dvh-120px)] flex items-end">
-                <div class="p-10 pb-50 sm:p-30 sm:pb-60 xl:py-150 xl:pl-0 w-full">
-                    <div class="bg-red/90 xl:w-[51%] text-white p-20 xsm:p-30 xl:pl-[calc((100%-1336px)/2)]">
-                        <div class="xl:pl-16">
-                            <h1 class="text-h1 uppercase font-medium mb-10">
-                                Massiv gebaut. Präzise geplant. Zuverlässig ausgeführt.
-                            </h1>
-                            <div class="text mb-8 xl:mb-15 text-h3">
-                                <p>
-                                    Wir schaffen langlebige Werte - von der Bauplanung bis zur schlüsselfertigen
-                                    Übergabe, alles aus einer Hand.
-                                </p>
-                            </div>
-                            <a href="unternehmen.html" class="animated_line uppercase text-h3 font-medium">
-                                Jetzt anfragen >>
-                            </a>
-                        </div>
+        <section class="bg-red relative z-1 sm:min-h-[calc(100dvh-90px)] flex flex-col items-end sm:pb-150 sm:pt-300">
+            <div class="container 3xl:max-w-full 3xl:!pl-[calc((100%-1368px)/2)]">
+                <div class="bg-red text-white py-16 xsm:py-40 sm:p-30 xl:max-w-[72%]">
+                    <h1 class="text-h1 uppercase font-medium mb-10">
+                        Immer in Bewegung - auf und neben der Baustelle. Aktuelles aus unserem Unternehmen.
+                    </h1>
+                    <div class="text mb-8 xl:mb-15 text-h3">
+                        <p>
+                            Mit innovativen Lösungen, regionaler Verbundenheit und handwerklicher Präzision
+                            gestalten
+                            wir Bauprojekte, die Bestand haben.
+                        </p>
                     </div>
-                    <div class="absolute inset-0 -z-10">
-                        <img src="assets/images/leistungen-hero-bg.webp" alt="Leistungen hero bg"
-                            class="size-full object-cover object-center" fetchpriority="high" loading="lazy">
-                    </div>
+                    <a href="unternehmen.html" class="animated_line uppercase text-h3 font-medium">
+                        Unternehmen >>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full -order-1 sm:absolute -z-1 inset-0 not-sm:aspect-video">
+                <div class="image size-full">
+                    <img src="assets/images/ref-hero-bg.webp" alt="" class="size-full object-cover">
                 </div>
             </div>
         </section>
@@ -211,8 +209,8 @@
                                 überdauern.
                             </p>
                             <button class="font-medium text-red" @click="open = !open">
-                                <span x-show="!open">mehr erfahren >> </span>
-                                <span x-show="open">mehr erfahren << </span>
+                                <span x-show="!open">mehr erfahren &gt;&gt;</span>
+                                <span x-show="open">&lt;&lt; weniger anzeigen </span>
                             </button>
                         </div>
                         <a href="kontakt.html"
@@ -248,7 +246,7 @@
                 <div class="grid md:grid-cols-2 xl:grid-cols-3 font-light gap-30 xxl:gap-80">
                     <div class="bg-gray p-20 mt-55">
                         <div class="flex items-end gap-10 mb-15 xl:mb-30">
-                            <img src="assets/images/Einfamilien-häuser.svg" alt=""
+                            <img src="assets/images/was1.svg" alt=""
                                 class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
                             <h3 class="text-h3 font-medium uppercase">
                                 Einfamilien - häuser
@@ -264,7 +262,7 @@
                     </div>
                     <div class="bg-gray p-20 mt-55">
                         <div class="flex items-end gap-10 mb-15 xl:mb-30">
-                            <img src="assets/images/Mehrfamilien-häuser.svg" alt=""
+                            <img src="assets/images/was2.svg" alt=""
                                 class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
                             <h3 class="text-h3 font-medium uppercase">
                                 Mehrfamilien - häuser
@@ -280,7 +278,7 @@
                     </div>
                     <div class="bg-gray p-20 mt-55">
                         <div class="flex items-end gap-10 mb-15 xl:mb-30">
-                            <img src="assets/images/Gewerbe-bau.svg" alt=""
+                            <img src="assets/images/was3.svg" alt=""
                                 class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
                             <h3 class="text-h3 font-medium uppercase">
                                 Gewerbe - bau
@@ -318,7 +316,7 @@
                 <div class="grid md:grid-cols-2 xl:grid-cols-3 font-light gap-30 xxl:gap-80">
                     <div class="bg-gray p-20 mt-55">
                         <div class="flex items-end gap-10 mb-15 xl:mb-30">
-                            <img src="assets/images/Rohbau.svg" alt=""
+                            <img src="assets/images/wie1.svg" alt=""
                                 class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
                             <h3 class="text-h3 font-medium uppercase">
                                 Rohbau
@@ -334,7 +332,7 @@
                     </div>
                     <div class="bg-gray p-20 mt-55">
                         <div class="flex items-end gap-10 mb-15 xl:mb-30">
-                            <img src="assets/images/Schlüssel-fertigbau.svg" alt=""
+                            <img src="assets/images/wie2.svg" alt=""
                                 class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
                             <h3 class="text-h3 font-medium uppercase">
                                 Schlüssel - fertigbau
@@ -350,7 +348,7 @@
                     </div>
                     <div class="bg-gray p-20 mt-55">
                         <div class="flex items-end gap-10 mb-15 xl:mb-30">
-                            <img src="assets/images/Sanierung&Modernisierung.svg" alt=""
+                            <img src="assets/images/wie3.svg" alt=""
                                 class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
                             <h3 class="text-h3 font-medium uppercase">
                                 Sanierung & Modernisierung
@@ -365,7 +363,7 @@
                     </div>
                     <div class="bg-gray p-20 mt-55">
                         <div class="flex items-end gap-10 mb-15 xl:mb-30">
-                            <img src="assets/images/Umbau&Anbau.svg" alt=""
+                            <img src="assets/images/wie4.svg" alt=""
                                 class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
                             <h3 class="text-h3 font-medium uppercase">
                                 Umbau & Anbau
@@ -381,7 +379,7 @@
                     </div>
                     <div class="bg-gray p-20 mt-55">
                         <div class="flex items-end gap-10 mb-15 xl:mb-30">
-                            <img src="assets/images/Energie-effizient.svg" alt=""
+                            <img src="assets/images/wie5.svg" alt=""
                                 class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
                             <h3 class="text-h3 font-medium uppercase">
                                 Energie - effizient
@@ -417,7 +415,7 @@
                 <div class="grid md:grid-cols-2 xl:grid-cols-3 font-light gap-30 xxl:gap-80">
                     <div class="bg-gray p-20 mt-55">
                         <div class="flex items-end gap-10 mb-15 xl:mb-30">
-                            <img src="assets/images/Bauplanung&Beratung.svg" alt=""
+                            <img src="assets/images/weitere1.svg" alt=""
                                 class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
                             <h3 class="text-h3 font-medium uppercase">
                                 Bauplanung & Beratung
@@ -433,7 +431,7 @@
                     </div>
                     <div class="bg-gray p-20 mt-55">
                         <div class="flex items-end gap-10 mb-15 xl:mb-30">
-                            <img src="assets/images/Baumanagement.svg" alt=""
+                            <img src="assets/images/weitere2.svg" alt=""
                                 class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
                             <h3 class="text-h3 font-medium uppercase">
                                 Baumanagement & Projektsteuerung
@@ -449,7 +447,7 @@
                     </div>
                     <div class="bg-gray p-20 mt-55">
                         <div class="flex items-end gap-10 mb-15 xl:mb-30">
-                            <img src="assets/images/Innenausbau.svg" alt=""
+                            <img src="assets/images/weitere3.svg" alt=""
                                 class="-mt-75 w-[clamp(5.3125rem,-1.4183rem+7.6923vw,7.8125rem)] shrink-0">
                             <h3 class="text-h3 font-medium uppercase">
                                 Innenausbau
